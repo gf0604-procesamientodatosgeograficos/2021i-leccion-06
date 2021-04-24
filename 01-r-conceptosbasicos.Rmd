@@ -43,28 +43,28 @@ En esta sección, se explican algunos de los aspectos principales de la [definic
 R, al igual que otros lenguajes de programación, estructura su funcionalidad en unidades de [código fuente](https://en.wikipedia.org/wiki/Source_code) llamadas [funciones](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions). Cada función realiza una tarea específica como, por ejemplo, un cálculo matemático y, por lo general, retorna un valor como salida. Todas las funciones tienen un nombre y un conjunto de argumentos que especifican los datos de entrada que procesa la función. Los argumentos se escriben entre paréntesis redondos (```()```) y estos siempre deben incluirse, aún en el caso de que la función no tenga ningún argumento. Si la función tiene varios argumentos, deben separarse mediante comas (```,```).
 
 ### Ejemplos
-La función [print()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/print) recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza ```print()``` para imprimir la hilera ["Hola mundo"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). Nótese el uso del símbolo ```#``` para comentarios (i.e. texto que no es código ejecutable).
+La función [print()](https://rdrr.io/r/base/print.html) recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza ```print()``` para imprimir la hilera ["Hola mundo"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). Nótese el uso del símbolo ```#``` para comentarios (i.e. texto que no es código ejecutable).
 
 ```{r collapse=TRUE}
 # Impresión de una hilera de carácteres
 print("Hola mundo")
 ```
 
-En otro ejemplo, la función  [mean()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/mean) retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función [c()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c).
+En otro ejemplo, la función  [mean()](https://rdrr.io/r/base/mean.html) retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función [c()](https://rdrr.io/r/base/c.html).
 
 ```{r collapse=TRUE}
 # Media aritmética
 mean(c(2, 4, 5, 9))
 ```
 
-La función [getwd()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd) (_get working directory_) retorna la ruta del directorio de trabajo de la sesión actual de R. Este es el directorio en el cual R espera encontrar, por ejemplo, archivos de datos.
+La función [getwd()](https://rdrr.io/r/base/getwd.html) (_get working directory_) retorna la ruta del directorio de trabajo de la sesión actual de R. Este es el directorio en el cual R espera encontrar, por ejemplo, archivos de datos.
 
 ```{r collapse=TRUE}
 # Impresión del directorio de trabajo
 getwd()
 ```
 
-La función ```setwd()``` (_set working directory_) establece la ruta del directorio de trabajo de la sesión actual de R. Como argumento, recibe una hilera de texto con la ruta.
+La función [setwd()](https://rdrr.io/r/base/getwd.html) (_set working directory_) establece la ruta del directorio de trabajo de la sesión actual de R. Como argumento, recibe una hilera de texto con la ruta.
 
 **Note las barras utilizadas para separar los subdirectorios: / (no \\)**
 
@@ -83,7 +83,7 @@ b. Si lo desea, cambie la ruta de su directorio de trabajo con la función ```se
 **
 
 ### Argumentos
-Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En el siguiente ejemplo, se utilizan los nombres de los argumentos ```x```, ```xlab``` y ```ylab``` de la función [plot()](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot) para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico.
+Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En el siguiente ejemplo, se utilizan los nombres de los argumentos ```x```, ```xlab``` y ```ylab``` de la función [plot()](https://rdrr.io/r/graphics/plot.default.html) para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico.
 
 ```{r collapse=TRUE}
 # Gráfico con etiquetas en los ejes x e y del conjunto de datos "cars"
@@ -101,7 +101,7 @@ b. Un subtítulo.
 **
 
 ### Ayuda sobre funciones
-Para obtener ayuda de una función desde la línea de comandos de R, puede utilizarse un signo de pregunta (```?```) seguido del nombre de la función o bien la función [help()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/help). Por ejemplo:
+Para obtener ayuda de una función desde la línea de comandos de R, puede utilizarse un signo de pregunta (```?```) seguido del nombre de la función o bien la función [help()](https://rdrr.io/r/utils/help.html). Por ejemplo:
 
 ```{r eval=FALSE}
 # Ayuda de la función setwd()
@@ -109,31 +109,31 @@ Para obtener ayuda de una función desde la línea de comandos de R, puede utili
 help(setwd)
 ```
 
-Adicionalmente, puede utilizarse la función [apropos()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/help) para buscar funciones por palabras clave.
+Adicionalmente, puede utilizarse la función [apropos()](https://rdrr.io/r/utils/apropos.html) para buscar funciones por palabras clave.
 
 ```{r eval=TRUE}
 # Búsqueda, por palabras clave, de funciones relacionadas con "mean" (media aritmética). Note las comillas ("").
 apropos("mean")
 ```
 
-La función [example()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/example) presenta ejemplos sobre el uso de una función.
+La función [example()](https://rdrr.io/r/utils/example.html) presenta ejemplos sobre el uso de una función.
 
 ```{r eval=TRUE}
 # Ejemplos de uso de la función mean()
 example("mean")
 ```
 
-Por otra parte, los sitios [R Documentation and manuals - R Documentation](https://www.rdocumentation.org/) y [All R Documentation](https://rdrr.io/r/) reúnen documentación de las funciones de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo. 
+Por otra parte, el sitio [All R Documentation](https://rdrr.io/r/) reúne documentación de las funciones de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo. 
 
 ### Bibliotecas y paquetes
-Las funciones de R se agrupan en conjuntos llamados bibliotecas, las cuales se distribuyen en paquetes. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función [library()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library).
+Las funciones de R se agrupan en conjuntos llamados bibliotecas, las cuales se distribuyen en paquetes. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función [library()](https://rdrr.io/r/base/library.html).
 
 ```{r}
 # Carga del paquete stats
 library(stats)
 ```
 
-Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función [install.packages()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages).
+Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función [install.packages()](https://rdrr.io/r/utils/install.packages.html).
 
 ```{r eval=FALSE}
 # Instalación del paquete dplyr (note las comillas)
@@ -167,7 +167,7 @@ dias
 
 Tanto ```x```, como ```nombre``` como ```dias``` son variables. Una variable es una etiqueta que se le asigna a un valor (o a un objeto). Una variable tiene un nombre que debe comenzar con una letra.
 
-El tipo de una variable (u objeto) puede consultarse con la función [typeof()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/typeof). Por ejemplo:
+El tipo de una variable (u objeto) puede consultarse con la función [typeof()](https://rdrr.io/r/base/typeof.html). Por ejemplo:
 
 ```{r collapse=TRUE}
 typeof(x)
@@ -198,7 +198,7 @@ typeof(y)
 typeof(x + y)
 ```
 
-Para declarar números enteros puede usarse el sufijo ```L``` o la función [as.integer()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/integer).
+Para declarar números enteros puede usarse el sufijo ```L``` o la función [as.integer()](https://rdrr.io/r/base/integer.html).
 
 ```{r collapse=TRUE}
 # Números enteros
@@ -262,7 +262,7 @@ Las expresiones lógicas pueden combinarse con operadores como:
 Un [vector](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects) es una estructura unidimensional que combina objetos del mismo tipo. 
 
 ##### Definición
-Los vectores pueden definirse de varias formas como, por ejemplo, con la función [c()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c) (del inglés _combine_):
+Los vectores pueden definirse de varias formas como, por ejemplo, con la función [c()](https://rdrr.io/r/base/c.html) (del inglés _combine_):
 
 ```{r collapse=TRUE}
 # Definición de un vector de números
@@ -290,7 +290,7 @@ vector_secuencia <- -0.5:3.7
 vector_secuencia
 ```
 
-La función [seq()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq) también crea un vector con base en una secuencia y permite especificar argumentos como un valor de incremento y la longitud de la secuencia.
+La función [seq()](https://rdrr.io/r/base/seq.html) también crea un vector con base en una secuencia y permite especificar argumentos como un valor de incremento y la longitud de la secuencia.
 
 ```{r collapse=TRUE}
 # Definición de un vector de números con la secuencia de 1 a 10
@@ -371,7 +371,7 @@ a < b
 Una [matriz](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects) es una estructura bidimensional de filas y columnas.
 
 ##### Definición
-Las matrices se definen mediante la función [matrix()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/matrix).
+Las matrices se definen mediante la función [matrix()](https://rdrr.io/r/base/matrix.html).
 
 ```{r collapse=TRUE}
 # Definición de una matriz de 3 x 3 con elementos de la secuencia 1:9 distribuidos en las columnas
@@ -390,7 +390,7 @@ columnas <- c("Edad", "Salario")
 m <- matrix(datos, nrow=3, ncol=2, byrow=TRUE, dimnames=list(filas, columnas))
 m
 ```
-La función [list()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/list) se utiliza, en este caso, para combinar vectores. En general, se usa para combinar datos de cualquier tipo.
+La función [list()](https://rdrr.io/r/base/list.html) se utiliza, en este caso, para combinar vectores. En general, se usa para combinar datos de cualquier tipo.
 
 ##### Indexación
 La indexación de matrices es similar a la de vectores, pero deben especificarse índices tanto para filas como para columnas.
@@ -440,7 +440,7 @@ a > b
 Los _data frames_ son estructuras bidimensionales compuestas por varios vectores, de manera similar a una matriz. Por lo general, las filas de la matriz corresponden a *observaciones* (o _cases_) y las columnas a *variables*. La definición de un data frame puede incluir nombres para cada observación y para cada variable. Los data frames implementan un conjunto de funciones similares a las de una hoja electrónica o la tabla de una base de datos relacional. Son fundamentales para el manejo de datos en R.
 
 ##### Definición
-La función [data.frame()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame) crea un data frame a partir de vectores que serán las columnas del data frame.
+La función [data.frame()](https://rdrr.io/r/base/data.frame.html) crea un data frame a partir de vectores que serán las columnas del data frame.
 
 ```{r collapse=TRUE}
 # Vector de nombres de países
@@ -494,7 +494,7 @@ poblaciones_paises
 ##### Operaciones
 R proporciona una gran variedad de funciones para manejar data frames. Las siguientes son algunas de las más utilizadas.
 
-La función [read.table()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) lee los datos contenidos en un archivo de texto y los retorna en un data frame. ```read.csv()``` es una función derivada, con valores por defecto orientados a los archivos de valores separados por comas (CSV, _Comma Separated Values_). Como argumento principal, ```read.csv()``` recibe la ruta del archivo CSV, el cual puede encontrarse en un disco local, en la Web o en otra ubicación.
+La función [read.table()](https://rdrr.io/r/utils/read.table.html) lee los datos contenidos en un archivo de texto y los retorna en un data frame. [read.csv()](https://rdrr.io/r/utils/read.table.html) es una función derivada, con valores por defecto orientados a los archivos de valores separados por comas (CSV, _Comma Separated Values_). Como argumento principal, ```read.csv()``` recibe la ruta del archivo CSV, el cual puede encontrarse en un disco local, en la Web o en otra ubicación.
 
 ```{r collapse=TRUE}
 # Lectura de archivo CSV ubicado en la Web
@@ -507,21 +507,21 @@ Ejercicio 03:
 a. Descargue el archivo del ejemplo anterior (https://raw.githubusercontent.com/curso-r-simocute/datos/main/covid/covid-card.csv) en su computadora y cárguelo en otro data frame mediante ```read.csv()```.
 **
 
-La función [str()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/str) despliega la estructura de un objeto R.
+La función [str()](https://rdrr.io/r/utils/str.html) despliega la estructura de un objeto R.
 
 ```{r collapse=TRUE}
 # Estructura del data frame
 str(poblaciones_paises)
 ```
 
-La función [summary()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary) proporciona un resumen de los contenidos de un data frame:
+La función [summary()](https://rdrr.io/r/base/summary.html) proporciona un resumen de los contenidos de un data frame:
 
 ```{r collapse=TRUE}
 # Resumen de los contenidos del data frame
 summary(poblaciones_paises)
 ```
 
-La función [View()](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View) invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo.
+La función [View()](https://rdrr.io/r/utils/View.html) invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo.
 
 ```{r eval=FALSE}
 View(casos_covid19_ca, "Casos de COVID-19 en Centramérica y RD")
@@ -532,7 +532,7 @@ View(casos_covid19_ca, "Casos de COVID-19 en Centramérica y RD")
 Las fecha se manejan en R mediante un tipo especial que permite realizar operaciones como diferencias, agrupamientos y otras. Internamente, las fechas en R se almacenan como un número que representa la cantidad de días transcurridos desde el 1 de enero de 1970 (1970-01-01).
 
 ##### Operaciones
-La función [Sys.Date()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Sys.time) retorna la fecha actual.
+La función [Sys.Date()](https://rdrr.io/r/base/Sys.time.html) retorna la fecha actual.
 
 ```{r collapse=TRUE}
 # Fecha actual
@@ -546,7 +546,7 @@ typeof(fecha_actual)
 class(fecha_actual)
 ```
 
-La función [as.Date()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.Date) convierte datos entre los tipos fecha y carácter, de acuerdo con un formato.
+La función [as.Date()](https://rdrr.io/r/base/as.Date.html) convierte datos entre los tipos fecha y carácter, de acuerdo con un formato.
 
 ```{r collapse=TRUE}
 # Conversión de fecha en formato año-mes-día
@@ -566,9 +566,12 @@ fecha_02 - fecha_01
 Hay una lista de formatos de fechas en [Date Formats in R - R-bloggers](https://www.r-bloggers.com/date-formats-in-r/).
 
 # Conjuntos de datos para pruebas
-Para efectos de pruebas y ejemplos, el interpretador de R incorpora varios conjuntos de datos en la forma de data frames que pueden listarse con la función ```data()```. Para consultar un conjunto en particular, puede utilizarse el operador  ```? ```.
+Para efectos de pruebas y ejemplos, el interpretador de R incorpora varios conjuntos de datos en la forma de data frames que pueden listarse con la función [data()](https://rdrr.io/r/utils/data.html). Para obtener información acerca de un conjunto de datos en particular, puede utilizarse el operador  ```? ```.
 
 ```{r eval=FALSE}
+# Información sobre todos los conjuntos de datos
+data()
+
 # Información sobre el cojunto de datos "cars"
 ?cars
 

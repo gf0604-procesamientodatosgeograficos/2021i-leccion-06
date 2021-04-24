@@ -2510,7 +2510,7 @@ Interfaz de RStudio.
 <h2 id="funciones">Funciones</h2>
 <p>R, al igual que otros lenguajes de programación, estructura su funcionalidad en unidades de <a href="https://en.wikipedia.org/wiki/Source_code">código fuente</a> llamadas <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions">funciones</a>. Cada función realiza una tarea específica como, por ejemplo, un cálculo matemático y, por lo general, retorna un valor como salida. Todas las funciones tienen un nombre y un conjunto de argumentos que especifican los datos de entrada que procesa la función. Los argumentos se escriben entre paréntesis redondos (<code>()</code>) y estos siempre deben incluirse, aún en el caso de que la función no tenga ningún argumento. Si la función tiene varios argumentos, deben separarse mediante comas (<code>,</code>).</p>
 <h3 id="ejemplos">Ejemplos</h3>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/print">print()</a> recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza <code>print()</code> para imprimir la hilera <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">“Hola mundo”</a>. Nótese el uso del símbolo <code>#</code> para comentarios (i.e. texto que no es código ejecutable).</p>
+<p>La función <a href="https://rdrr.io/r/base/print.html">print()</a> recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza <code>print()</code> para imprimir la hilera <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">“Hola mundo”</a>. Nótese el uso del símbolo <code>#</code> para comentarios (i.e. texto que no es código ejecutable).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Impresión de una hilera de carácteres</span>
@@ -2519,7 +2519,7 @@ Interfaz de RStudio.
 </div>
 <pre><code>[1] &quot;Hola mundo&quot;</code></pre>
 </div>
-<p>En otro ejemplo, la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/mean">mean()</a> retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c">c()</a>.</p>
+<p>En otro ejemplo, la función <a href="https://rdrr.io/r/base/mean.html">mean()</a> retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función <a href="https://rdrr.io/r/base/c.html">c()</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Media aritmética</span>
@@ -2528,7 +2528,7 @@ Interfaz de RStudio.
 </div>
 <pre><code>[1] 5</code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd">getwd()</a> (<em>get working directory</em>) retorna la ruta del directorio de trabajo de la sesión actual de R. Este es el directorio en el cual R espera encontrar, por ejemplo, archivos de datos.</p>
+<p>La función <a href="https://rdrr.io/r/base/getwd.html">getwd()</a> (<em>get working directory</em>) retorna la ruta del directorio de trabajo de la sesión actual de R. Este es el directorio en el cual R espera encontrar, por ejemplo, archivos de datos.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Impresión del directorio de trabajo</span>
@@ -2537,7 +2537,7 @@ Interfaz de RStudio.
 </div>
 <pre><code>[1] &quot;C:/Users/mfvargas/gf0604-procesamientodatosgeograficos/2021i/2021i-leccion-06&quot;</code></pre>
 </div>
-<p>La función <code>setwd()</code> (<em>set working directory</em>) establece la ruta del directorio de trabajo de la sesión actual de R. Como argumento, recibe una hilera de texto con la ruta.</p>
+<p>La función <a href="https://rdrr.io/r/base/getwd.html">setwd()</a> (<em>set working directory</em>) establece la ruta del directorio de trabajo de la sesión actual de R. Como argumento, recibe una hilera de texto con la ruta.</p>
 <p><strong>Note las barras utilizadas para separar los subdirectorios: / (no \)</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2554,7 +2554,7 @@ a. Obtenga la ruta de su directorio de trabajo con la función <code>getwd()</co
 b. Si lo desea, cambie la ruta de su directorio de trabajo con la función <code>setwd()</code>. Verifique el cambio con <code>getwd()</code>.<br />
 </strong></p>
 <h3 id="argumentos">Argumentos</h3>
-<p>Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En el siguiente ejemplo, se utilizan los nombres de los argumentos <code>x</code>, <code>xlab</code> y <code>ylab</code> de la función <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot">plot()</a> para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico.</p>
+<p>Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En el siguiente ejemplo, se utilizan los nombres de los argumentos <code>x</code>, <code>xlab</code> y <code>ylab</code> de la función <a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a> para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Gráfico con etiquetas en los ejes x e y del conjunto de datos "cars"</span>
@@ -2572,7 +2572,7 @@ a. Un título.<br />
 b. Un subtítulo.<br />
 </strong></p>
 <h3 id="ayuda-sobre-funciones">Ayuda sobre funciones</h3>
-<p>Para obtener ayuda de una función desde la línea de comandos de R, puede utilizarse un signo de pregunta (<code>?</code>) seguido del nombre de la función o bien la función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/help">help()</a>. Por ejemplo:</p>
+<p>Para obtener ayuda de una función desde la línea de comandos de R, puede utilizarse un signo de pregunta (<code>?</code>) seguido del nombre de la función o bien la función <a href="https://rdrr.io/r/utils/help.html">help()</a>. Por ejemplo:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Ayuda de la función setwd()</span>
@@ -2581,7 +2581,7 @@ b. Un subtítulo.<br />
 </code></pre>
 </div>
 </div>
-<p>Adicionalmente, puede utilizarse la función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/help">apropos()</a> para buscar funciones por palabras clave.</p>
+<p>Adicionalmente, puede utilizarse la función <a href="https://rdrr.io/r/utils/apropos.html">apropos()</a> para buscar funciones por palabras clave.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Búsqueda, por palabras clave, de funciones relacionadas con "mean" (media aritmética). Note las comillas ("").</span>
@@ -2592,7 +2592,7 @@ b. Un subtítulo.<br />
  [5] &quot;mean&quot;          &quot;mean.Date&quot;     &quot;mean.default&quot;  &quot;mean.difftime&quot;
  [9] &quot;mean.POSIXct&quot;  &quot;mean.POSIXlt&quot;  &quot;rowMeans&quot;      &quot;weighted.mean&quot;</code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/example">example()</a> presenta ejemplos sobre el uso de una función.</p>
+<p>La función <a href="https://rdrr.io/r/utils/example.html">example()</a> presenta ejemplos sobre el uso de una función.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Ejemplos de uso de la función mean()</span>
@@ -2607,9 +2607,9 @@ mean&gt; xm &lt;- mean(x)
 mean&gt; c(xm, mean(x, trim = 0.10))
 [1] 8.75 5.50</code></pre>
 </div>
-<p>Por otra parte, los sitios <a href="https://www.rdocumentation.org/">R Documentation and manuals - R Documentation</a> y <a href="https://rdrr.io/r/">All R Documentation</a> reúnen documentación de las funciones de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo.</p>
+<p>Por otra parte, el sitio <a href="https://rdrr.io/r/">All R Documentation</a> reúne documentación de las funciones de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo.</p>
 <h3 id="bibliotecas-y-paquetes">Bibliotecas y paquetes</h3>
-<p>Las funciones de R se agrupan en conjuntos llamados bibliotecas, las cuales se distribuyen en paquetes. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library">library()</a>.</p>
+<p>Las funciones de R se agrupan en conjuntos llamados bibliotecas, las cuales se distribuyen en paquetes. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función <a href="https://rdrr.io/r/base/library.html">library()</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Carga del paquete stats</span>
@@ -2617,7 +2617,7 @@ mean&gt; c(xm, mean(x, trim = 0.10))
 </code></pre>
 </div>
 </div>
-<p>Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages">install.packages()</a>.</p>
+<p>Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función <a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Instalación del paquete dplyr (note las comillas)</span>
@@ -2664,7 +2664,7 @@ mean&gt; c(xm, mean(x, trim = 0.10))
 [6] &quot;Viernes&quot;   &quot;Sábado&quot;   </code></pre>
 </div>
 <p>Tanto <code>x</code>, como <code>nombre</code> como <code>dias</code> son variables. Una variable es una etiqueta que se le asigna a un valor (o a un objeto). Una variable tiene un nombre que debe comenzar con una letra.</p>
-<p>El tipo de una variable (u objeto) puede consultarse con la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/typeof">typeof()</a>. Por ejemplo:</p>
+<p>El tipo de una variable (u objeto) puede consultarse con la función <a href="https://rdrr.io/r/base/typeof.html">typeof()</a>. Por ejemplo:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
@@ -2721,7 +2721,7 @@ mean&gt; c(xm, mean(x, trim = 0.10))
 </div>
 <pre><code>[1] &quot;double&quot;</code></pre>
 </div>
-<p>Para declarar números enteros puede usarse el sufijo <code>L</code> o la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/integer">as.integer()</a>.</p>
+<p>Para declarar números enteros puede usarse el sufijo <code>L</code> o la función <a href="https://rdrr.io/r/base/integer.html">as.integer()</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Números enteros</span>
@@ -2816,7 +2816,7 @@ mean&gt; c(xm, mean(x, trim = 0.10))
 <h4 id="vectores">Vectores</h4>
 <p>Un <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects">vector</a> es una estructura unidimensional que combina objetos del mismo tipo.</p>
 <h5 id="definición">Definición</h5>
-<p>Los vectores pueden definirse de varias formas como, por ejemplo, con la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c">c()</a> (del inglés <em>combine</em>):</p>
+<p>Los vectores pueden definirse de varias formas como, por ejemplo, con la función <a href="https://rdrr.io/r/base/c.html">c()</a> (del inglés <em>combine</em>):</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de un vector de números</span>
@@ -2860,7 +2860,7 @@ mean&gt; c(xm, mean(x, trim = 0.10))
 </div>
 <pre><code>[1] -0.5  0.5  1.5  2.5  3.5</code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq">seq()</a> también crea un vector con base en una secuencia y permite especificar argumentos como un valor de incremento y la longitud de la secuencia.</p>
+<p>La función <a href="https://rdrr.io/r/base/seq.html">seq()</a> también crea un vector con base en una secuencia y permite especificar argumentos como un valor de incremento y la longitud de la secuencia.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de un vector de números con la secuencia de 1 a 10</span>
@@ -2972,7 +2972,7 @@ mean&gt; c(xm, mean(x, trim = 0.10))
 <h4 id="matrices">Matrices</h4>
 <p>Una <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects">matriz</a> es una estructura bidimensional de filas y columnas.</p>
 <h5 id="definición-1">Definición</h5>
-<p>Las matrices se definen mediante la función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/matrix">matrix()</a>.</p>
+<p>Las matrices se definen mediante la función <a href="https://rdrr.io/r/base/matrix.html">matrix()</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de una matriz de 3 x 3 con elementos de la secuencia 1:9 distribuidos en las columnas</span>
@@ -3011,7 +3011,7 @@ Ana     18     500
 Mario   25    1000
 Laura   30    2000</code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/list">list()</a> se utiliza, en este caso, para combinar vectores. En general, se usa para combinar datos de cualquier tipo.</p>
+<p>La función <a href="https://rdrr.io/r/base/list.html">list()</a> se utiliza, en este caso, para combinar vectores. En general, se usa para combinar datos de cualquier tipo.</p>
 <h5 id="indexación-1">Indexación</h5>
 <p>La indexación de matrices es similar a la de vectores, pero deben especificarse índices tanto para filas como para columnas.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -3115,7 +3115,7 @@ Mario   25    1000</code></pre>
 <h4 id="data-frames">Data Frames</h4>
 <p>Los <em>data frames</em> son estructuras bidimensionales compuestas por varios vectores, de manera similar a una matriz. Por lo general, las filas de la matriz corresponden a <em>observaciones</em> (o <em>cases</em>) y las columnas a <em>variables</em>. La definición de un data frame puede incluir nombres para cada observación y para cada variable. Los data frames implementan un conjunto de funciones similares a las de una hoja electrónica o la tabla de una base de datos relacional. Son fundamentales para el manejo de datos en R.</p>
 <h5 id="definición-2">Definición</h5>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame">data.frame()</a> crea un data frame a partir de vectores que serán las columnas del data frame.</p>
+<p>La función <a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a> crea un data frame a partir de vectores que serán las columnas del data frame.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Vector de nombres de países</span>
@@ -3214,7 +3214,7 @@ Mario   25    1000</code></pre>
 </div>
 <h5 id="operaciones-2">Operaciones</h5>
 <p>R proporciona una gran variedad de funciones para manejar data frames. Las siguientes son algunas de las más utilizadas.</p>
-<p>La función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.table()</a> lee los datos contenidos en un archivo de texto y los retorna en un data frame. <code>read.csv()</code> es una función derivada, con valores por defecto orientados a los archivos de valores separados por comas (CSV, <em>Comma Separated Values</em>). Como argumento principal, <code>read.csv()</code> recibe la ruta del archivo CSV, el cual puede encontrarse en un disco local, en la Web o en otra ubicación.</p>
+<p>La función <a href="https://rdrr.io/r/utils/read.table.html">read.table()</a> lee los datos contenidos en un archivo de texto y los retorna en un data frame. <a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a> es una función derivada, con valores por defecto orientados a los archivos de valores separados por comas (CSV, <em>Comma Separated Values</em>). Como argumento principal, <code>read.csv()</code> recibe la ruta del archivo CSV, el cual puede encontrarse en un disco local, en la Web o en otra ubicación.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Lectura de archivo CSV ubicado en la Web</span>
@@ -3235,7 +3235,7 @@ Mario   25    1000</code></pre>
 </div>
 <p><strong> Ejercicio 03:<br />
 a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercontent.com/curso-r-simocute/datos/main/covid/covid-card.csv" class="uri">https://raw.githubusercontent.com/curso-r-simocute/datos/main/covid/covid-card.csv</a>) en su computadora y cárguelo en otro data frame mediante <code>read.csv()</code>. </strong></p>
-<p>La función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/str">str()</a> despliega la estructura de un objeto R.</p>
+<p>La función <a href="https://rdrr.io/r/utils/str.html">str()</a> despliega la estructura de un objeto R.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Estructura del data frame</span>
@@ -3246,7 +3246,7 @@ a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercon
  $ pais     : chr  &quot;PAN&quot; &quot;CRI&quot; &quot;NIC&quot; &quot;SLV&quot; ...
  $ poblacion: num  8.2 10 12.4 12.8 18.4 33.8 0.6 21.2</code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary">summary()</a> proporciona un resumen de los contenidos de un data frame:</p>
+<p>La función <a href="https://rdrr.io/r/base/summary.html">summary()</a> proporciona un resumen de los contenidos de un data frame:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Resumen de los contenidos del data frame</span>
@@ -3261,7 +3261,7 @@ a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercon
                     3rd Qu.:19.10  
                     Max.   :33.80  </code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/View">View()</a> invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo.</p>
+<p>La función <a href="https://rdrr.io/r/utils/View.html">View()</a> invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='va'>casos_covid19_ca</span>, <span class='st'>"Casos de COVID-19 en Centramérica y RD"</span><span class='op'>)</span>
@@ -3272,7 +3272,7 @@ a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercon
 <h4 id="fechas">Fechas</h4>
 <p>Las fecha se manejan en R mediante un tipo especial que permite realizar operaciones como diferencias, agrupamientos y otras. Internamente, las fechas en R se almacenan como un número que representa la cantidad de días transcurridos desde el 1 de enero de 1970 (1970-01-01).</p>
 <h5 id="operaciones-3">Operaciones</h5>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Sys.time">Sys.Date()</a> retorna la fecha actual.</p>
+<p>La función <a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a> retorna la fecha actual.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Fecha actual</span>
@@ -3280,7 +3280,7 @@ a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercon
 <span class='va'>fecha_actual</span>
 </code></pre>
 </div>
-<pre><code>[1] &quot;2021-04-23&quot;</code></pre>
+<pre><code>[1] &quot;2021-04-24&quot;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r">
 <span class='co'># Tipo de datos</span>
@@ -3296,7 +3296,7 @@ a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercon
 </div>
 <pre><code>[1] &quot;Date&quot;</code></pre>
 </div>
-<p>La función <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.Date">as.Date()</a> convierte datos entre los tipos fecha y carácter, de acuerdo con un formato.</p>
+<p>La función <a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a> convierte datos entre los tipos fecha y carácter, de acuerdo con un formato.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Conversión de fecha en formato año-mes-día</span>
@@ -3325,10 +3325,13 @@ a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercon
 </div>
 <p>Hay una lista de formatos de fechas en <a href="https://www.r-bloggers.com/date-formats-in-r/">Date Formats in R - R-bloggers</a>.</p>
 <h1 id="conjuntos-de-datos-para-pruebas">Conjuntos de datos para pruebas</h1>
-<p>Para efectos de pruebas y ejemplos, el interpretador de R incorpora varios conjuntos de datos en la forma de data frames que pueden listarse con la función <code>data()</code>. Para consultar un conjunto en particular, puede utilizarse el operador <code>?</code>.</p>
+<p>Para efectos de pruebas y ejemplos, el interpretador de R incorpora varios conjuntos de datos en la forma de data frames que pueden listarse con la función <a href="https://rdrr.io/r/utils/data.html">data()</a>. Para obtener información acerca de un conjunto de datos en particular, puede utilizarse el operador <code>?</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Información sobre el cojunto de datos "cars"</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Información sobre todos los conjuntos de datos</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='co'># Información sobre el cojunto de datos "cars"</span>
 <span class='op'>?</span><span class='va'>cars</span>
 
 <span class='co'># Información sobre el cojunto de datos "Iris"</span>
