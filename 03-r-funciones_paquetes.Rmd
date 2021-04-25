@@ -1,0 +1,221 @@
+---
+title: "R - Conceptos básicos"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Funciones
+R, al igual que otros lenguajes de programación, estructura su funcionalidad en unidades de [código fuente](https://en.wikipedia.org/wiki/Source_code) llamadas [funciones](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions). Cada función realiza una tarea específica como, por ejemplo, un cálculo matemático y, por lo general, retorna un valor como salida. Todas las funciones tienen un nombre y un conjunto de argumentos que especifican los datos de entrada que procesa la función. Los argumentos se escriben entre paréntesis redondos (```()```) y estos siempre deben incluirse, aún en el caso de que la función no tenga ningún argumento. Si la función tiene varios argumentos, deben separarse mediante comas (```,```).
+
+## Ejemplos
+La función [print()](https://rdrr.io/r/base/print.html) recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza ```print()``` para imprimir la hilera ["Hola mundo"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). Nótese el uso del símbolo ```#``` para comentarios (i.e. texto que no es código ejecutable).
+
+```{r collapse=TRUE}
+# Impresión de una hilera de caracteres
+print("Hola mundo")
+```
+
+La función  [mean()](https://rdrr.io/r/base/mean.html) retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función [c()](https://rdrr.io/r/base/c.html).
+
+```{r collapse=TRUE}
+# Media aritmética
+mean(c(2, 4, 5, 9))
+```
+
+La función [getwd()](https://rdrr.io/r/base/getwd.html) (_get working directory_) retorna la ruta del directorio de trabajo de la sesión actual de R. Este es el directorio en el cual R espera encontrar, por ejemplo, archivos de datos.
+
+```{r collapse=TRUE}
+# Impresión del directorio de trabajo
+getwd()
+```
+
+La función [setwd()](https://rdrr.io/r/base/getwd.html) (_set working directory_) establece la ruta del directorio de trabajo de la sesión actual de R. Como argumento, recibe una hilera de texto con la ruta.
+
+**Note las barras utilizadas para separar los subdirectorios: / (no \\)**
+
+```{r eval=FALSE}
+# Definición del directorio de trabajo (la ruta debe existir)
+setwd("C:/Users/mfvargas")
+
+# Directorio con espacios, tildes y eñes
+setwd("C:/Users/mfvargas/mi directorio con espacios y tildes áéíóúñ")
+```
+
+**
+Ejercicio 01:  
+a. Obtenga la ruta de su directorio de trabajo con la función ```getwd()```.  
+b. Si lo desea, cambie la ruta de su directorio de trabajo con la función ```setwd()```. Verifique el cambio con ```getwd()```.  
+**
+
+## Argumentos
+Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En algunos casos, el orden y el tipo de datos de los argumentos permiten que el interpretador de R conozca cuál es cada uno.
+
+En el siguiente ejemplo, se utilizan los argumentos ```x```, ```xlab``` y ```ylab``` de la función [plot()](https://rdrr.io/r/graphics/plot.default.html) para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico de dispersión.
+
+```{r collapse=TRUE}
+# Gráfico de dispersón del conjunto de datos "cars" con etiquetas en los ejes x e y
+plot(
+  x=cars, 
+  xlab="Velocidad (mph)", 
+  ylab="Distancia requerida para frenar (pies)"
+)
+```
+
+**
+Ejercicio 02: estudie la documentación de la función ```plot()``` y agregue al gráfico anterior:  
+a. Un título.  
+b. Un subtítulo.  
+**
+
+## Ayuda
+Para obtener ayuda de una función desde la línea de comandos de R, puede utilizarse un signo de pregunta (```?```) seguido del nombre de la función o bien la función [help()](https://rdrr.io/r/utils/help.html). Por ejemplo:
+
+```{r eval=FALSE}
+# Ayuda de la función setwd()
+?setwd
+help(setwd)
+```
+
+Adicionalmente, puede utilizarse la función [apropos()](https://rdrr.io/r/utils/apropos.html) para buscar funciones por palabras clave.
+
+```{r eval=TRUE}
+# Búsqueda, por palabras clave, de funciones relacionadas con "mean" (media aritmética). Note las comillas ("").
+apropos("mean")
+```
+
+La función [example()](https://rdrr.io/r/utils/example.html) presenta ejemplos sobre el uso de una función.
+
+```{r eval=TRUE}
+# Ejemplos de uso de la función mean()
+example("mean")
+```
+
+Por otra parte, el sitio [All R Documentation](https://rdrr.io/r/) reúne documentación de funciones de una gran cantidad de paquetes de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo. 
+
+## Conjuntos de datos para pruebas
+Para efectos de pruebas y ejemplos, la distribución base de R incorpora varios conjuntos de datos que pueden listarse con la función [data()](https://rdrr.io/r/utils/data.html). Para obtener información acerca de un conjunto de datos en particular, puede utilizarse el operador  ```? ```.
+
+```{r eval=FALSE}
+# Información sobre todos los conjuntos de datos incorporados en la distribución base de R
+data()
+
+# Información sobre el cojunto de datos "cars"
+?cars
+
+# Información sobre el cojunto de datos "Iris"
+?iris
+```
+
+# Bibliotecas y paquetes
+Las funciones de R se distribuyen mediante paquetes. Cada paquete contiene un conjunto de funciones y estructuras de datos relacionadas entre sí. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función [library()](https://rdrr.io/r/base/library.html).
+
+```{r}
+# Carga del paquete stats
+library(stats)
+```
+
+Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función [install.packages()](https://rdrr.io/r/utils/install.packages.html).
+
+En el siguiente ejemplo, se instala el paquete [PASWR2](https://cran.r-project.org/package=PASWR2), el cual contiene el conjunto de datos [TITANIC3](https://rdrr.io/cran/PASWR2/man/TITANIC3.html).
+
+```{r eval=FALSE}
+# Instalación del paquete PASWR2 (note las comillas)
+install.packages("PASWR2")
+```
+
+El paquete PASWR2 se carga con ```library()```. 
+
+```{r}
+# Carga de PASWR2
+library(PASWR2)
+```
+
+El conjunto de datos  ```TITANIC3 ``` puede visualizarse con la función [View()](https://rdrr.io/r/utils/View.html).
+
+```{r eval=FALSE}
+# Visualización del conjunto de datos TITANIC3
+View(TITANIC3)
+```
+
+Para visualizar gráficamente el conjunto de datos, el siguiente gráfico de barras muestra la distribución de pasajeros por clase.
+
+```{r collapse=TRUE}
+# Cantidades de pasajeros por clase
+table(TITANIC3$pclass)
+
+# Gráfico de barras por clase de pasajero
+barplot(
+  height=table(TITANIC3$pclass),
+  main="Distribución de pasajeros del Titanic por clase",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros"  
+)
+```
+
+La distribución por cada clase puede dividirse en fallecidos y sobrevivientes.
+
+```{r collapse=TRUE}
+# Cantidades de pasajeros fallecidos y sobrevivientes por clase
+# (0 corresponde a fallecidos y 1 a sobrevivientes)
+table(TITANIC3$survived, TITANIC3$pclass)
+```
+
+El siguiente gráfico muestra en un gráfico de barras apiladas la distribución de pasajeros sobrevivientes y fallecidos en cada clase.
+
+```{r collapse=TRUE}
+# Gráfico de barras apiladas
+barplot(
+  height = table(TITANIC3$survived, TITANIC3$pclass),
+  main = "Distribución de pasajeros fallecidos y sobrevivientes por clase",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros",
+  col = topo.colors(2)
+)
+
+# Leyenda
+legend(
+  x = "topleft",
+  inset = 0.03,
+  legend = c("Fallecidos", "Sobrevivientes"),
+  fill = topo.colors(2),
+  horiz = TRUE
+)
+```
+
+La misma información se muestra seguidamente en un gráfico de barras agrupadas.
+
+```{r collapse=TRUE}
+# Gráfico de barras agrupadas
+barplot(
+  height = table(TITANIC3$survived, TITANIC3$pclass),
+  main = "Distribución de pasajeros fallecidos y sobrevivientes por clase",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros",  
+  col = topo.colors(2),
+  beside = TRUE
+)
+
+# Leyenda
+legend(
+  x = "topleft",
+  inset = 0.03,
+  legend = c("Fallecidos", "Sobrevivientes"),
+  fill = topo.colors(2),
+  horiz = TRUE
+)
+```
+
+**
+Ejercicio 03:  
+a. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras apiladas.  
+b. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras agrupadas.  
+**
+
+
+

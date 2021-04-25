@@ -46,11 +46,11 @@ R, al igual que otros lenguajes de programación, estructura su funcionalidad en
 La función [print()](https://rdrr.io/r/base/print.html) recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza ```print()``` para imprimir la hilera ["Hola mundo"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). Nótese el uso del símbolo ```#``` para comentarios (i.e. texto que no es código ejecutable).
 
 ```{r collapse=TRUE}
-# Impresión de una hilera de carácteres
+# Impresión de una hilera de caracteres
 print("Hola mundo")
 ```
 
-En otro ejemplo, la función  [mean()](https://rdrr.io/r/base/mean.html) retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función [c()](https://rdrr.io/r/base/c.html).
+La función  [mean()](https://rdrr.io/r/base/mean.html) retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función [c()](https://rdrr.io/r/base/c.html).
 
 ```{r collapse=TRUE}
 # Media aritmética
@@ -83,10 +83,12 @@ b. Si lo desea, cambie la ruta de su directorio de trabajo con la función ```se
 **
 
 ### Argumentos
-Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En el siguiente ejemplo, se utilizan los nombres de los argumentos ```x```, ```xlab``` y ```ylab``` de la función [plot()](https://rdrr.io/r/graphics/plot.default.html) para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico.
+Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En algunos casos, el orden y el tipo de datos de los argumentos permiten que el interpretador de R conozca cuál es cada uno.
+
+En el siguiente ejemplo, se utilizan los argumentos ```x```, ```xlab``` y ```ylab``` de la función [plot()](https://rdrr.io/r/graphics/plot.default.html) para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico de dispersión.
 
 ```{r collapse=TRUE}
-# Gráfico con etiquetas en los ejes x e y del conjunto de datos "cars"
+# Gráfico de dispersón del conjunto de datos "cars" con etiquetas en los ejes x e y
 plot(
   x=cars, 
   xlab="Velocidad (mph)", 
@@ -123,10 +125,24 @@ La función [example()](https://rdrr.io/r/utils/example.html) presenta ejemplos 
 example("mean")
 ```
 
-Por otra parte, el sitio [All R Documentation](https://rdrr.io/r/) reúne documentación de las funciones de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo. 
+Por otra parte, el sitio [All R Documentation](https://rdrr.io/r/) reúne documentación de funciones de una gran cantidad de paquetes de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo. 
+
+### Conjuntos de datos para pruebas
+Para efectos de pruebas y ejemplos, la distribución base de R incorpora varios conjuntos de datos que pueden listarse con la función [data()](https://rdrr.io/r/utils/data.html). Para obtener información acerca de un conjunto de datos en particular, puede utilizarse el operador  ```? ```.
+
+```{r eval=FALSE}
+# Información sobre todos los conjuntos de datos incorporados en la distribución base de R
+data()
+
+# Información sobre el cojunto de datos "cars"
+?cars
+
+# Información sobre el cojunto de datos "Iris"
+?iris
+```
 
 ### Bibliotecas y paquetes
-Las funciones de R se agrupan en conjuntos llamados bibliotecas, las cuales se distribuyen en paquetes. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función [library()](https://rdrr.io/r/base/library.html).
+Las funciones de R se distribuyen mediante paquetes. Cada paquete contiene un conjunto de funciones y estructuras de datos relacionadas entre sí. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función [library()](https://rdrr.io/r/base/library.html).
 
 ```{r}
 # Carga del paquete stats
@@ -135,13 +151,103 @@ library(stats)
 
 Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función [install.packages()](https://rdrr.io/r/utils/install.packages.html).
 
+En el siguiente ejemplo, se instala el paquete [PASWR2](https://cran.r-project.org/package=PASWR2), el cual contiene el conjunto de datos [TITANIC3](https://rdrr.io/cran/PASWR2/man/TITANIC3.html).
+
 ```{r eval=FALSE}
-# Instalación del paquete dplyr (note las comillas)
-install.packages("dplyr")
+# Instalación del paquete PASWR2 (note las comillas)
+install.packages("PASWR2")
 ```
 
+El paquete PASWR2 se carga con ```library()```. 
+
+```{r}
+# Carga de PASWR2
+library(PASWR2)
+```
+
+El conjunto de datos  ```TITANIC3 ``` puede visualizarse con la función [View()](https://rdrr.io/r/utils/View.html).
+
+```{r eval=FALSE}
+# Visualización del conjunto de datos TITANIC3
+View(TITANIC3)
+```
+
+Para visualizar gráficamente el conjunto de datos, el siguiente gráfico de barras muestra la distribución de pasajeros por clase.
+
+```{r collapse=TRUE}
+# Cantidades de pasajeros por clase
+table(TITANIC3$pclass)
+
+# Gráfico de barras por clase de pasajero
+barplot(
+  height=table(TITANIC3$pclass),
+  main="Distribución de pasajeros del Titanic por clase",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros"  
+)
+```
+
+La distribución por cada clase puede dividirse en fallecidos y sobrevivientes.
+
+```{r collapse=TRUE}
+# Cantidades de pasajeros fallecidos y sobrevivientes por clase
+# (0 corresponde a fallecidos y 1 a sobrevivientes)
+table(TITANIC3$survived, TITANIC3$pclass)
+```
+
+El siguiente gráfico muestra en un gráfico de barras apiladas la distribución de pasajeros sobrevivientes y fallecidos en cada clase.
+
+```{r collapse=TRUE}
+# Gráfico de barras apiladas
+barplot(
+  height = table(TITANIC3$survived, TITANIC3$pclass),
+  main = "Distribución de pasajeros fallecidos y sobrevivientes por clase",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros",
+  col = topo.colors(2)
+)
+
+# Leyenda
+legend(
+  x = "topleft",
+  inset = 0.03,
+  legend = c("Fallecidos", "Sobrevivientes"),
+  fill = topo.colors(2),
+  horiz = TRUE
+)
+```
+
+La misma información se muestra seguidamente en un gráfico de barras agrupadas.
+
+```{r collapse=TRUE}
+# Gráfico de barras agrupadas
+barplot(
+  height = table(TITANIC3$survived, TITANIC3$pclass),
+  main = "Distribución de pasajeros fallecidos y sobrevivientes por clase",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros",  
+  col = topo.colors(2),
+  beside = TRUE
+)
+
+# Leyenda
+legend(
+  x = "topleft",
+  inset = 0.03,
+  legend = c("Fallecidos", "Sobrevivientes"),
+  fill = topo.colors(2),
+  horiz = TRUE
+)
+```
+
+**
+Ejercicio 03:  
+a. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras apiladas.  
+b. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras agrupadas.  
+**
+
 ## Tipos de datos
-R puede trabajar con varios [tipos de datos básicos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types), entre los que están números, carácteres (i.e. textos) y lógicos. También puede trabajar con [tipos compuestos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Special-compound-objects), como factores y _data frames_.
+R puede trabajar con varios [tipos de datos básicos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types), entre los que están números, caracteres (i.e. textos) y lógicos. También puede trabajar con [tipos compuestos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Special-compound-objects), como factores y _data frames_.
 
 R proporciona acceso a los datos a través de objetos. Un objeto es una entidad que tiene asociadas propiedades (i.e. datos) y métodos (i.e. funciones) para manipular esas propiedades. Un objeto puede ser, por ejemplo, un número, una hilera de texto, un vector o una matriz.
 
@@ -156,18 +262,18 @@ x
 20 -> y
 y
 
-# Hilera de carácteres
+# Hilera de caracteres
 nombre <- 'Manuel'
 nombre
 
-# Vector de hileras de carácteres
+# Vector de hileras de caracteres
 dias <- c('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado')
 dias
 ```
 
-Tanto ```x```, como ```nombre``` como ```dias``` son variables. Una variable es una etiqueta que se le asigna a un valor (o a un objeto). Una variable tiene un nombre que debe comenzar con una letra.
+Tanto ```x```, como ```nombre``` como ```dias``` son variables. Una variable es una etiqueta que se le asigna a un objeto. Una variable debe comenzar con una letra.
 
-El tipo de una variable (u objeto) puede consultarse con la función [typeof()](https://rdrr.io/r/base/typeof.html). Por ejemplo:
+El tipo de una variable puede consultarse con la función [typeof()](https://rdrr.io/r/base/typeof.html). Por ejemplo:
 
 ```{r collapse=TRUE}
 typeof(x)
@@ -178,7 +284,7 @@ typeof(dias)
 
 A continuación, se describen con más detalle algunos de los tipos de datos utilizados en el lenguaje R.
 
-### Básicos
+### Tipos básicos
 R define [seis tipos de datos básicos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types). En esta sección, se describen los más utilizados durante este curso.
 
 #### Números
@@ -216,11 +322,11 @@ typeof(x * y)
 
 Nótese que al declararse una variable numérica, ya sea que tenga o no punto decimal, R la considera por defecto de tipo ```double```. Para que se considere de tipo ```integer```, debe utilizarse el sufijo  ```L ``` o la función  ```as.integer()```.
 
-#### Carácteres
+#### Caracteres
 Se utilizan para representar textos. Deben estar encerrados entre comillas simples (```''```) o dobles (```""```).
 
 ```{r collapse=TRUE}
-# Hileras de carácteres
+# Hileras de caracteres
 nombre <- "María"
 apellido <- "Pérez"
 
@@ -269,7 +375,7 @@ Los vectores pueden definirse de varias formas como, por ejemplo, con la funció
 vector_numeros <- c(1, 7, 32, 45, 57)
 vector_numeros
 
-# Definición de un vector de hileras de carácteres
+# Definición de un vector de hileras de caracteres
 vector_nombres <- c("Álvaro", "Ana", "Berta", "Bernardo")
 vector_nombres
 ```
@@ -436,6 +542,35 @@ a > b
 ```
 
 ### Tipos compuestos
+#### Factores
+Los factores se utilizan para representar datos categóricos. Un factor corresponde a un conjunto de categorías correspondientes a un concepto (ej. ["Sí", "No"], ["Casado", "Soltero"], ["Alto", "Medio", "Bajo"]). 
+
+Internamente, los factores se representan en R como números enteros con etiquetas asociadas. A pesar de que los factores parecen (y pueden funcionar como) hileras de caracteres, en realidad son números y debe tenerse cuidado de no manejarlos como caracteres.
+
+Los elementos de un factor se denominan niveles (*levels*) y, por defecto, se almacenan en orden alfabético.
+
+##### Definición
+Un factor se crea con la función [factor()](https://rdrr.io/r/base/factor.html).
+
+```{r collapse=TRUE}
+# Factor de valores de sexo
+sexo <- factor(c("Masculino", "Femenino", "Femenino", "Masculino"))
+```
+
+##### Operaciones
+R proporciona una gran variedad de funciones para manejar factores. Seguidamente, se ejemplifican algunas de estas.
+
+```{r collapse=TRUE}
+# Etiquetas de los niveles
+levels(sexo)
+
+# Cantidad de niveles
+nlevels(sexo)
+
+# Conteo de elementos de cada uno de los niveles del factor
+table(sexo)
+```
+
 #### Data Frames
 Los _data frames_ son estructuras bidimensionales compuestas por varios vectores, de manera similar a una matriz. Por lo general, las filas de la matriz corresponden a *observaciones* (o _cases_) y las columnas a *variables*. La definición de un data frame puede incluir nombres para cada observación y para cada variable. Los data frames implementan un conjunto de funciones similares a las de una hoja electrónica o la tabla de una base de datos relacional. Son fundamentales para el manejo de datos en R.
 
@@ -498,13 +633,14 @@ La función [read.table()](https://rdrr.io/r/utils/read.table.html) lee los dato
 
 ```{r collapse=TRUE}
 # Lectura de archivo CSV ubicado en la Web
-casos_covid19_ca <- read.csv("https://raw.githubusercontent.com/curso-r-simocute/datos/main/covid/covid-card.csv")
+covid <- read.csv("https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv")
 
-casos_covid19_ca
+covid
 ```
+
 **
-Ejercicio 03:  
-a. Descargue el archivo del ejemplo anterior (https://raw.githubusercontent.com/curso-r-simocute/datos/main/covid/covid-card.csv) en su computadora y cárguelo en otro data frame mediante ```read.csv()```.
+Ejercicio 04:  
+a. Descargue el archivo del ejemplo anterior (https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv) en su computadora y cárguelo en otro data frame mediante ```read.csv()```.
 **
 
 La función [str()](https://rdrr.io/r/utils/str.html) despliega la estructura de un objeto R.
@@ -521,10 +657,11 @@ La función [summary()](https://rdrr.io/r/base/summary.html) proporciona un resu
 summary(poblaciones_paises)
 ```
 
-La función [View()](https://rdrr.io/r/utils/View.html) invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo.
+La función [View()](https://rdrr.io/r/utils/View.html) invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo. Ejecute en su computadora la siguiente línea de código para apreciar el funcionamiento de ```View()```.
 
 ```{r eval=FALSE}
-View(casos_covid19_ca, "Casos de COVID-19 en Centramérica y RD")
+# Vista de los casos de COVID-19
+View(covid, "Casos de COVID-19 en Centramérica")
 ```
 
 ### Otros
@@ -564,22 +701,6 @@ fecha_02 - fecha_01
 ```
 
 Hay una lista de formatos de fechas en [Date Formats in R - R-bloggers](https://www.r-bloggers.com/date-formats-in-r/).
-
-# Conjuntos de datos para pruebas
-Para efectos de pruebas y ejemplos, el interpretador de R incorpora varios conjuntos de datos en la forma de data frames que pueden listarse con la función [data()](https://rdrr.io/r/utils/data.html). Para obtener información acerca de un conjunto de datos en particular, puede utilizarse el operador  ```? ```.
-
-```{r eval=FALSE}
-# Información sobre todos los conjuntos de datos
-data()
-
-# Información sobre el cojunto de datos "cars"
-?cars
-
-# Información sobre el cojunto de datos "Iris"
-?iris
-```
-
-
 
 
 

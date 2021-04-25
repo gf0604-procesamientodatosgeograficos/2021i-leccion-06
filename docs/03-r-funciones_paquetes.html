@@ -86,29 +86,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>My Website: About this site</title>
+  <title>GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: R - Conceptos básicos</title>
 
-  <meta property="description" itemprop="description" content="Some additional details about the website"/>
 
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="My Website: About this site"/>
+  <meta property="og:title" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: R - Conceptos básicos"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some additional details about the website"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="My Website"/>
+  <meta property="og:site_name" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="My Website: About this site"/>
-  <meta property="twitter:description" content="Some additional details about the website"/>
+  <meta property="twitter:title" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: R - Conceptos básicos"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About this site"]},{"type":"character","attributes":{},"value":["Some additional details about the website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["R - Conceptos básicos"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2032,6 +2030,361 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
+  <style type="text/css">
+  /* base variables */
+
+  /* Edit the CSS properties in this file to create a custom
+     Distill theme. Only edit values in the right column
+     for each row; values shown are the CSS defaults.
+     To return any property to the default,
+     you may set its value to: unset
+     All rows must end with a semi-colon.                      */
+
+  /* Optional: embed custom fonts here with `@import`          */
+  /* This must remain at the top of this file.                 */
+
+
+
+  html {
+    /*-- Main font sizes --*/
+    --title-size:      50px;
+    --body-size:       1.06rem;
+    --code-size:       14px;
+    --aside-size:      12px;
+    --fig-cap-size:    13px;
+    /*-- Main font colors --*/
+    --title-color:     #000000;
+    --header-color:    rgba(0, 0, 0, 0.8);
+    --body-color:      rgba(0, 0, 0, 0.8);
+    --aside-color:     rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    /*-- Specify custom fonts ~~~ must be imported above   --*/
+    --heading-font:    sans-serif;
+    --mono-font:       monospace;
+    --body-font:       sans-serif;
+    --navbar-font:     sans-serif;  /* websites + blogs only */
+  }
+
+  /*-- ARTICLE METADATA --*/
+  d-byline {
+    --heading-size:    0.6rem;
+    --heading-color:   rgba(0, 0, 0, 0.5);
+    --body-size:       0.8rem;
+    --body-color:      rgba(0, 0, 0, 0.8);
+  }
+
+  /*-- ARTICLE TABLE OF CONTENTS --*/
+  .d-contents {
+    --heading-size:    18px;
+    --contents-size:   13px;
+  }
+
+  /*-- ARTICLE APPENDIX --*/
+  d-appendix {
+    --heading-size:    15px;
+    --heading-color:   rgba(0, 0, 0, 0.65);
+    --text-size:       0.8em;
+    --text-color:      rgba(0, 0, 0, 0.5);
+  }
+
+  /*-- WEBSITE HEADER + FOOTER --*/
+  /* These properties only apply to Distill sites and blogs  */
+
+  .distill-site-header {
+    --title-size:       18px;
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  .distill-site-footer {
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  /*-- Additional custom styles --*/
+  /* Add any additional CSS rules below                      */
+  </style>
+  <style type="text/css">/* base variables */
+
+  /* Edit the CSS properties in this file to create a custom
+     Distill theme. Only edit values in the right column
+     for each row; values shown are the CSS defaults.
+     To return any property to the default,
+     you may set its value to: unset
+     All rows must end with a semi-colon.                      */
+
+  /* Optional: embed custom fonts here with `@import`          */
+  /* This must remain at the top of this file.                 */
+
+  /* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap');
+
+  html {
+    /*-- Main font sizes --*/
+    --title-size:      50px;
+    --body-size:       1.06rem;
+    --code-size:       14px;
+    --aside-size:      13px;
+    --fig-cap-size:    13px;
+    /*-- Main font colors --*/
+    --title-color:     #122140;
+    --header-color:    #122140;
+    --body-color:      rgba(0, 0, 0, 0.8);
+    --aside-color:     rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    /*-- Specify custom fonts ~~~ must be imported above   --*/
+    --heading-font:    "Lora", sans-serif;
+    --mono-font:       "Fira Code", monospace;
+    --body-font:       "Source Sans Pro", sans-serif;
+    --navbar-font:     "Lora", sans-serif;  /* websites + blogs only */
+  }
+
+  /*-- ARTICLE METADATA --*/
+  d-byline {
+    --heading-size:    0.9rem;
+    --heading-color:   rgba(0, 0, 0, 0.5);
+    --body-size:       1rem;
+    --body-color:      rgba(0, 0, 0, 0.8);
+  }
+
+  /*-- ARTICLE TABLE OF CONTENTS --*/
+  .d-contents {
+    --heading-size:    20px;
+    --contents-size:   16px;
+  }
+
+  /*-- ARTICLE APPENDIX --*/
+  d-appendix {
+    --heading-size:    15px;
+    --heading-color:   rgba(0, 0, 0, 0.65);
+    --text-size:       0.8em;
+    --text-color:      rgba(0, 0, 0, 0.5);
+  }
+
+  /*-- WEBSITE HEADER + FOOTER --*/
+  /* These properties only apply to Distill sites and blogs  */
+
+  .distill-site-header {
+    --title-size:       18px;
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        16px;
+    --hover-color:      white;
+    --bkgd-color:       #122140;
+  }
+
+  .distill-site-footer {
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  /*-- Additional custom styles --*/
+  /* Add any additional CSS rules below                      */
+
+  /* Change bullets */
+  ul > li::marker {
+    font-size: 1.125em;
+    color: #e5bf00;
+  }
+
+  /* Change link appearance */
+  d-article a {
+    border-bottom: 1.5px solid #e5bf00;
+    text-decoration: none;
+  }
+
+  /* Change navbar header appearance */
+  .distill-site-header {
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .distill-site-header a:hover {
+    text-decoration: underline;
+  }
+
+  /* Change site description appearance */
+  d-title p {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  /* Change site metadata appearance */
+  d-byline .byline h3 {
+    font-family: 'Lora';
+    letter-spacing: 0.07em;
+  }
+
+  d-byline a:hover {
+    text-decoration: underline;
+  }
+
+  /*-- Code --*/
+  code, pre {
+      font-family: "Source Code Pro", "Lucida Console",
+      Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }</style>
+  <style type="text/css">
+  /* base style */
+
+  /* FONT FAMILIES */
+
+  :root {
+    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  body,
+  .posts-list .post-preview p,
+  .posts-list .description p {
+    font-family: var(--body-font), var(--body-default);
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .posts-list .post-preview h2,
+  .posts-list .description h2 {
+    font-family: var(--heading-font), var(--heading-default);
+  }
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: var(--mono-font), var(--mono-default);
+  }
+
+
+  /*-- TITLE --*/
+  d-title h1,
+  .posts-list > h1 {
+    color: var(--title-color, black);
+  }
+
+  d-title h1 {
+    font-size: var(--title-size, 50px);
+  }
+
+  /*-- HEADERS --*/
+  d-article h1,
+  d-article h2,
+  d-article h3,
+  d-article h4,
+  d-article h5,
+  d-article h6 {
+    color: var(--header-color, rgba(0, 0, 0, 0.8));
+  }
+
+  /*-- BODY --*/
+  d-article > p,  /* only text inside of <p> tags */
+  d-article > ul, /* lists */
+  d-article > ol {
+    color: var(--body-color, rgba(0, 0, 0, 0.8));
+    font-size: var(--body-size, 1.06rem);
+  }
+
+
+  /*-- CODE --*/
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-size: var(--code-size, 14px);
+  }
+
+  /*-- ASIDE --*/
+  d-article aside {
+    font-size: var(--aside-size, 12px);
+    color: var(--aside-color, rgba(0, 0, 0, 0.6));
+  }
+
+  /*-- FIGURE CAPTIONS --*/
+  figure .caption,
+  figure figcaption,
+  .figure .caption {
+    font-size: var(--fig-cap-size, 13px);
+    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+  }
+
+  /*-- METADATA --*/
+  d-byline h3 {
+    font-size: var(--heading-size, 0.6rem);
+    color: var(--heading-color, rgba(0, 0, 0, 0.5));
+  }
+
+  d-byline {
+    font-size: var(--body-size, 0.8rem);
+    color: var(--body-color, rgba(0, 0, 0, 0.8));
+  }
+
+  d-byline a,
+  d-article d-byline a {
+    color: var(--body-color, rgba(0, 0, 0, 0.8));
+  }
+
+  /*-- TABLE OF CONTENTS --*/
+  .d-contents nav h3 {
+    font-size: var(--heading-size, 18px);
+  }
+
+  .d-contents nav a {
+    font-size: var(--contents-size, 13px);
+  }
+
+  /*-- APPENDIX --*/
+  d-appendix h3 {
+    font-size: var(--heading-size, 15px);
+    color: var(--heading-color, rgba(0, 0, 0, 0.65));
+  }
+
+  d-appendix {
+    font-size: var(--text-size, 0.8em);
+    color: var(--text-color, rgba(0, 0, 0, 0.5));
+  }
+
+  d-appendix d-footnote-list a.footnote-backlink {
+    color: var(--text-color, rgba(0, 0, 0, 0.5));
+  }
+
+  /*-- WEBSITE HEADER + FOOTER --*/
+  .distill-site-header .title {
+    font-size: var(--title-size, 18px);
+    font-family: var(--navbar-font), var(--heading-default);
+  }
+
+  .distill-site-header a,
+  .nav-dropdown .nav-dropbtn {
+    font-family: var(--navbar-font), var(--heading-default);
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    color: var(--text-color, rgba(255, 255, 255, 0.8));
+    font-size: var(--text-size, 15px);
+  }
+
+  .distill-site-header a:hover,
+  .nav-dropdown:hover .nav-dropbtn {
+    color: var(--hover-color, white);
+  }
+
+  .distill-site-header {
+    font-size: var(--text-size, 15px);
+    color: var(--text-color, rgba(255, 255, 255, 0.8));
+    background-color: var(--bkgd-color, #0F2E3D);
+  }
+
+  .distill-site-footer {
+    font-size: var(--text-size, 15px);
+    color: var(--text-color, rgba(255, 255, 255, 0.8));
+    background-color: var(--bkgd-color, #0F2E3D);
+  }
+
+  .distill-site-footer a:hover {
+    color: var(--hover-color, white);
+  }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
@@ -2053,7 +2406,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About this site","description":"Some additional details about the website","authors":[]}
+{"title":"R - Conceptos básicos","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2061,11 +2414,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="index.html" class="title">My Website</a>
+<a href="index.html" class="title">GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06</a>
+<a href="https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-06/">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
+<a href="https://www.youtube.com/playlist?list=PL1gEgLSwAJeI-aLFsld3jP47B9REqhUes">
+<i class="fab fa-youtube" aria-hidden="true"></i>
+</a>
+<a href="https://github.com/gf0604-procesamientodatosgeograficos/2021i-datos">
+<i class="fas fa-database" aria-hidden="true"></i>
+</a>
 </div>
 <div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
+<a href="https://gf0604-procesamientodatosgeograficos.github.io/2021i/">GF0604 2021-I</a>
+<a href="https://www.geografia.fcs.ucr.ac.cr/">Escuela de Geografia</a>
+<a href="https://www.ucr.ac.cr/">Universidad de Costa Rica</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2075,15 +2438,270 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About this site</h1>
+<h1>R - Conceptos básicos</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some additional details about the website</p></p>
+
 </div>
 
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#funciones">Funciones</a>
+<ul>
+<li><a href="#ejemplos">Ejemplos</a></li>
+<li><a href="#argumentos">Argumentos</a></li>
+<li><a href="#ayuda">Ayuda</a></li>
+<li><a href="#conjuntos-de-datos-para-pruebas">Conjuntos de datos para pruebas</a></li>
+</ul></li>
+<li><a href="#bibliotecas-y-paquetes">Bibliotecas y paquetes</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="funciones">Funciones</h1>
+<p>R, al igual que otros lenguajes de programación, estructura su funcionalidad en unidades de <a href="https://en.wikipedia.org/wiki/Source_code">código fuente</a> llamadas <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions">funciones</a>. Cada función realiza una tarea específica como, por ejemplo, un cálculo matemático y, por lo general, retorna un valor como salida. Todas las funciones tienen un nombre y un conjunto de argumentos que especifican los datos de entrada que procesa la función. Los argumentos se escriben entre paréntesis redondos (<code>()</code>) y estos siempre deben incluirse, aún en el caso de que la función no tenga ningún argumento. Si la función tiene varios argumentos, deben separarse mediante comas (<code>,</code>).</p>
+<h2 id="ejemplos">Ejemplos</h2>
+<p>La función <a href="https://rdrr.io/r/base/print.html">print()</a> recibe como argumento un valor (ej. un texto o un número) para imprimirlo en la pantalla. En el siguiente fragmento de código en R, se utiliza <code>print()</code> para imprimir la hilera <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">“Hola mundo”</a>. Nótese el uso del símbolo <code>#</code> para comentarios (i.e. texto que no es código ejecutable).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Impresión de una hilera de caracteres</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='st'>"Hola mundo"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Hola mundo&quot;</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/mean.html">mean()</a> retorna la media aritmética del argumento de entrada. En el siguiente ejemplo, se calcula la media de los números de un vector creado a su vez con la función <a href="https://rdrr.io/r/base/c.html">c()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Media aritmética</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>4</span>, <span class='fl'>5</span>, <span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 5</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/getwd.html">getwd()</a> (<em>get working directory</em>) retorna la ruta del directorio de trabajo de la sesión actual de R. Este es el directorio en el cual R espera encontrar, por ejemplo, archivos de datos.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Impresión del directorio de trabajo</span>
+<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;C:/Users/mfvargas/gf0604-procesamientodatosgeograficos/2021i/2021i-leccion-06&quot;</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/getwd.html">setwd()</a> (<em>set working directory</em>) establece la ruta del directorio de trabajo de la sesión actual de R. Como argumento, recibe una hilera de texto con la ruta.</p>
+<p><strong>Note las barras utilizadas para separar los subdirectorios: / (no \)</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición del directorio de trabajo (la ruta debe existir)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"C:/Users/mfvargas"</span><span class='op'>)</span>
+
+<span class='co'># Directorio con espacios, tildes y eñes</span>
+<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"C:/Users/mfvargas/mi directorio con espacios y tildes áéíóúñ"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p><strong> Ejercicio 01:<br />
+a. Obtenga la ruta de su directorio de trabajo con la función <code>getwd()</code>.<br />
+b. Si lo desea, cambie la ruta de su directorio de trabajo con la función <code>setwd()</code>. Verifique el cambio con <code>getwd()</code>.<br />
+</strong></p>
+<h2 id="argumentos">Argumentos</h2>
+<p>Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario. En algunos casos, el orden y el tipo de datos de los argumentos permiten que el interpretador de R conozca cuál es cada uno.</p>
+<p>En el siguiente ejemplo, se utilizan los argumentos <code>x</code>, <code>xlab</code> y <code>ylab</code> de la función <a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a> para especificar la fuente de datos y las etiquetas de los ejes x e y de un gráfico de dispersión.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Gráfico de dispersón del conjunto de datos "cars" con etiquetas en los ejes x e y</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>
+  x<span class='op'>=</span><span class='va'>cars</span>, 
+  xlab<span class='op'>=</span><span class='st'>"Velocidad (mph)"</span>, 
+  ylab<span class='op'>=</span><span class='st'>"Distancia requerida para frenar (pies)"</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="03-r-funciones_paquetes_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<p><strong> Ejercicio 02: estudie la documentación de la función <code>plot()</code> y agregue al gráfico anterior:<br />
+a. Un título.<br />
+b. Un subtítulo.<br />
+</strong></p>
+<h2 id="ayuda">Ayuda</h2>
+<p>Para obtener ayuda de una función desde la línea de comandos de R, puede utilizarse un signo de pregunta (<code>?</code>) seguido del nombre de la función o bien la función <a href="https://rdrr.io/r/utils/help.html">help()</a>. Por ejemplo:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Ayuda de la función setwd()</span>
+<span class='op'>?</span><span class='va'>setwd</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/help.html'>help</a></span><span class='op'>(</span><span class='va'>setwd</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Adicionalmente, puede utilizarse la función <a href="https://rdrr.io/r/utils/apropos.html">apropos()</a> para buscar funciones por palabras clave.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Búsqueda, por palabras clave, de funciones relacionadas con "mean" (media aritmética). Note las comillas ("").</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/apropos.html'>apropos</a></span><span class='op'>(</span><span class='st'>"mean"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> [1] &quot;.colMeans&quot;     &quot;.rowMeans&quot;     &quot;colMeans&quot;      &quot;kmeans&quot;       
+ [5] &quot;mean&quot;          &quot;mean.Date&quot;     &quot;mean.default&quot;  &quot;mean.difftime&quot;
+ [9] &quot;mean.POSIXct&quot;  &quot;mean.POSIXlt&quot;  &quot;rowMeans&quot;      &quot;weighted.mean&quot;</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/utils/example.html">example()</a> presenta ejemplos sobre el uso de una función.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Ejemplos de uso de la función mean()</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/example.html'>example</a></span><span class='op'>(</span><span class='st'>"mean"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+mean&gt; x &lt;- c(0:10, 50)
+
+mean&gt; xm &lt;- mean(x)
+
+mean&gt; c(xm, mean(x, trim = 0.10))
+[1] 8.75 5.50</code></pre>
+</div>
+<p>Por otra parte, el sitio <a href="https://rdrr.io/r/">All R Documentation</a> reúne documentación de funciones de una gran cantidad de paquetes de R. También puede obtenerse ayuda sobre una función en los buscadores de Internet (ej. Google), además de ejemplos, tutoriales y otros materiales de apoyo.</p>
+<h2 id="conjuntos-de-datos-para-pruebas">Conjuntos de datos para pruebas</h2>
+<p>Para efectos de pruebas y ejemplos, la distribución base de R incorpora varios conjuntos de datos que pueden listarse con la función <a href="https://rdrr.io/r/utils/data.html">data()</a>. Para obtener información acerca de un conjunto de datos en particular, puede utilizarse el operador <code>?</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Información sobre todos los conjuntos de datos incorporados en la distribución base de R</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='co'># Información sobre el cojunto de datos "cars"</span>
+<span class='op'>?</span><span class='va'>cars</span>
+
+<span class='co'># Información sobre el cojunto de datos "Iris"</span>
+<span class='op'>?</span><span class='va'>iris</span>
+</code></pre>
+</div>
+</div>
+<h1 id="bibliotecas-y-paquetes">Bibliotecas y paquetes</h1>
+<p>Las funciones de R se distribuyen mediante paquetes. Cada paquete contiene un conjunto de funciones y estructuras de datos relacionadas entre sí. Para utilizar un paquete, primero debe cargarse (en la memoria del computador) con la función <a href="https://rdrr.io/r/base/library.html">library()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Carga del paquete stats</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>stats</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Algunos paquetes están contenidos en la distribución base de R y otros deben instalarse de manera separada con la función <a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a>.</p>
+<p>En el siguiente ejemplo, se instala el paquete <a href="https://cran.r-project.org/package=PASWR2">PASWR2</a>, el cual contiene el conjunto de datos <a href="https://rdrr.io/cran/PASWR2/man/TITANIC3.html">TITANIC3</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Instalación del paquete PASWR2 (note las comillas)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"PASWR2"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>El paquete PASWR2 se carga con <code>library()</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Carga de PASWR2</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>PASWR2</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>El conjunto de datos <code>TITANIC3</code> puede visualizarse con la función <a href="https://rdrr.io/r/utils/View.html">View()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Visualización del conjunto de datos TITANIC3</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='va'>TITANIC3</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Para visualizar gráficamente el conjunto de datos, el siguiente gráfico de barras muestra la distribución de pasajeros por clase.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Cantidades de pasajeros por clase</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>pclass</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+1st 2nd 3rd 
+323 277 709 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Gráfico de barras por clase de pasajero</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span>
+  height<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>pclass</span><span class='op'>)</span>,
+  main<span class='op'>=</span><span class='st'>"Distribución de pasajeros del Titanic por clase"</span>,
+  xlab <span class='op'>=</span> <span class='st'>"Clase"</span>,
+  ylab <span class='op'>=</span> <span class='st'>"Cantidad de pasajeros"</span>  
+<span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="03-r-funciones_paquetes_files/figure-html5/unnamed-chunk-14-1.png" width="624" /></p>
+</div>
+<p>La distribución por cada clase puede dividirse en fallecidos y sobrevivientes.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Cantidades de pasajeros fallecidos y sobrevivientes por clase</span>
+<span class='co'># (0 corresponde a fallecidos y 1 a sobrevivientes)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>survived</span>, <span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>pclass</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>   
+    1st 2nd 3rd
+  0 123 158 528
+  1 200 119 181</code></pre>
+</div>
+<p>El siguiente gráfico muestra en un gráfico de barras apiladas la distribución de pasajeros sobrevivientes y fallecidos en cada clase.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Gráfico de barras apiladas</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span>
+  height <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>survived</span>, <span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>pclass</span><span class='op'>)</span>,
+  main <span class='op'>=</span> <span class='st'>"Distribución de pasajeros fallecidos y sobrevivientes por clase"</span>,
+  xlab <span class='op'>=</span> <span class='st'>"Clase"</span>,
+  ylab <span class='op'>=</span> <span class='st'>"Cantidad de pasajeros"</span>,
+  col <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/palettes.html'>topo.colors</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='op'>)</span>
+
+<span class='co'># Leyenda</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/legend.html'>legend</a></span><span class='op'>(</span>
+  x <span class='op'>=</span> <span class='st'>"topleft"</span>,
+  inset <span class='op'>=</span> <span class='fl'>0.03</span>,
+  legend <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Fallecidos"</span>, <span class='st'>"Sobrevivientes"</span><span class='op'>)</span>,
+  fill <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/palettes.html'>topo.colors</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>,
+  horiz <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="03-r-funciones_paquetes_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
+</div>
+<p>La misma información se muestra seguidamente en un gráfico de barras agrupadas.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Gráfico de barras agrupadas</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span>
+  height <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>survived</span>, <span class='va'>TITANIC3</span><span class='op'>$</span><span class='va'>pclass</span><span class='op'>)</span>,
+  main <span class='op'>=</span> <span class='st'>"Distribución de pasajeros fallecidos y sobrevivientes por clase"</span>,
+  xlab <span class='op'>=</span> <span class='st'>"Clase"</span>,
+  ylab <span class='op'>=</span> <span class='st'>"Cantidad de pasajeros"</span>,  
+  col <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/palettes.html'>topo.colors</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>,
+  beside <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
+
+<span class='co'># Leyenda</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/legend.html'>legend</a></span><span class='op'>(</span>
+  x <span class='op'>=</span> <span class='st'>"topleft"</span>,
+  inset <span class='op'>=</span> <span class='fl'>0.03</span>,
+  legend <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Fallecidos"</span>, <span class='st'>"Sobrevivientes"</span><span class='op'>)</span>,
+  fill <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/palettes.html'>topo.colors</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>,
+  horiz <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="03-r-funciones_paquetes_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+</div>
+<p><strong> Ejercicio 03:<br />
+a. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras apiladas.<br />
+b. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras agrupadas.<br />
+</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2095,7 +2713,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-06/issues/new">create an issue</a> on the source repository.</p>
+<h3 id="reuse">Reuse</h3>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-06/">https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-06/</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

@@ -24,13 +24,15 @@ knitr::opts_chunk$set(echo = FALSE)
 # Resumen
 En esta lección, se estudiarán los conceptos básicos del lenguaje de programación R, incluyendo:
 
-- Tipos de datos.
-- Objetos y variables.
+- Características generales de R.
+- El ambiente de desarrollo RStudio.
 - Funciones y paquetes.
-- Cómo obtener ayuda en R.
+- Tipos de datos.
 
 # Trabajo previo
 - Lea los capítulos 2 y 3 de [Grolemund, G., & Wickham, H. (2014). Hands-On Programming with R](https://rstudio-education.github.io/hopr/).
 
 # Contenidos
-[01 R - Conceptos básicos](01-r-conceptosbasicos.html)  
+[01 R - Conceptos básicos](01-r-caracteristicas_generales.html)  
+[02 El ambiente de desarrollo RStudio](02-rstudio.html)  
+[03 R - Funciones y paquetes](03-r-funciones_paquetes.html)  
