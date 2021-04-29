@@ -1,5 +1,5 @@
 ---
-title: "GF0604 Procesamiento de datos geográficos 2021-I. Lección 06"
+title: "GF0604 Procesamiento de datos geográficos 2021-I. Lecciones 06 y 07"
 author: 
 - name: Manuel Vargas
   url: https://github.com/mfvargas
