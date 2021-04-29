@@ -397,7 +397,8 @@ La función [read.table()](https://rdrr.io/r/utils/read.table.html) lee los dato
 
 ```{r collapse=TRUE}
 # Lectura de archivo CSV ubicado en la Web
-covid <- read.csv("https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv")
+covid <- 
+  read.csv("https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv")
 
 covid
 ```
