@@ -86,31 +86,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: GF0604 Procesamiento de datos geográficos 2021-I. Lección 06</title>
+  <title>GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: R - Conceptos básicos</title>
 
-  <meta property="description" itemprop="description" content="Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07."/>
 
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
-  <meta name="article:author" content="Manuel Vargas"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: GF0604 Procesamiento de datos geográficos 2021-I. Lección 06"/>
+  <meta property="og:title" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: R - Conceptos básicos"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: GF0604 Procesamiento de datos geográficos 2021-I. Lección 06"/>
-  <meta property="twitter:description" content="Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07."/>
+  <meta property="twitter:title" content="GF0604 Procesamiento de datos geograficos 2021-I. Leccion 06: R - Conceptos básicos"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","site"]}},"value":[{"type":"character","attributes":{},"value":["GF0604 Procesamiento de datos geográficos 2021-I. Lección 06"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Manuel Vargas"]},{"type":"character","attributes":{},"value":["https://github.com/mfvargas"]},{"type":"character","attributes":{},"value":["Universidad de Costa Rica"]},{"type":"character","attributes":{},"value":["https://www.ucr.ac.cr/"]}]}]},{"type":"character","attributes":{},"value":["Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07.\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["R - Conceptos básicos"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2410,7 +2406,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"GF0604 Procesamiento de datos geográficos 2021-I. Lección 06","description":"Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07.","authors":[{"author":"Manuel Vargas","authorURL":"https://github.com/mfvargas","affiliation":"Universidad de Costa Rica","affiliationURL":"https://www.ucr.ac.cr/","orcidID":""}]}
+{"title":"R - Conceptos básicos","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2442,46 +2438,802 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>GF0604 Procesamiento de datos geográficos 2021-I. Lección 06</h1>
+<h1>R - Conceptos básicos</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07.</p></p>
-</div>
-
-<div class="d-byline">
-  Manuel Vargas <a href="https://github.com/mfvargas" class="uri">https://github.com/mfvargas</a> (Universidad de Costa Rica)<a href="https://www.ucr.ac.cr/" class="uri">https://www.ucr.ac.cr/</a>
-  
 
 </div>
+
 
 <div class="d-article">
 <div class="d-contents d-contents-float">
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#resumen">Resumen</a></li>
-<li><a href="#trabajo-previo">Trabajo previo</a></li>
-<li><a href="#contenidos">Contenidos</a></li>
+<li><a href="#tipos-de-datos">Tipos de datos</a>
+<ul>
+<li><a href="#tipos-básicos">Tipos básicos</a>
+<ul>
+<li><a href="#números">Números</a></li>
+<li><a href="#caracteres">Caracteres</a></li>
+<li><a href="#lógicos">Lógicos</a></li>
+<li><a href="#vectores">Vectores</a>
+<ul>
+<li><a href="#definición">Definición</a></li>
+<li><a href="#indexación">Indexación</a></li>
+<li><a href="#operaciones">Operaciones</a></li>
+</ul></li>
+<li><a href="#matrices">Matrices</a>
+<ul>
+<li><a href="#definición-1">Definición</a></li>
+<li><a href="#indexación-1">Indexación</a></li>
+<li><a href="#operaciones-1">Operaciones</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#tipos-compuestos">Tipos compuestos</a>
+<ul>
+<li><a href="#factores">Factores</a>
+<ul>
+<li><a href="#definición-2">Definición</a></li>
+<li><a href="#operaciones-2">Operaciones</a></li>
+</ul></li>
+<li><a href="#data-frames">Data Frames</a>
+<ul>
+<li><a href="#definición-3">Definición</a></li>
+<li><a href="#indexación-2">Indexación</a></li>
+<li><a href="#operaciones-3">Operaciones</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#otros">Otros</a>
+<ul>
+<li><a href="#fechas">Fechas</a>
+<ul>
+<li><a href="#operaciones-4">Operaciones</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
 </div>
-<h1 id="resumen">Resumen</h1>
-<p>En esta lección, se estudiarán los conceptos básicos del lenguaje de programación R, incluyendo:</p>
+<h1 id="tipos-de-datos">Tipos de datos</h1>
+<p>R puede trabajar con varios <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types">tipos de datos básicos</a>, entre los que están números, caracteres (i.e. textos) y lógicos. También puede trabajar con <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Special-compound-objects">tipos compuestos</a>, como factores y <em>data frames</em>.</p>
+<p>R proporciona acceso a los datos a través de objetos. Un objeto es una entidad que tiene asociadas propiedades (i.e. datos) y métodos (i.e. funciones) para manipular esas propiedades. Un objeto puede ser, por ejemplo, un número, una hilera de texto, un vector o una matriz.</p>
+<p>Hay muchas formas de crear objetos en R. Una de las más sencillas es con los operadores de asignación. Estos son <code>=</code> y <code>&lt;-</code> (o <code>-&gt;</code>). Por ejemplo, las siguientes sentencias crean un número, un texto y un vector.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Número</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>10</span>
+<span class='va'>x</span>
+</code></pre>
+</div>
+<pre><code>[1] 10</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Otro número</span>
+<span class='fl'>20</span> <span class='op'>-&gt;</span> <span class='va'>y</span>
+<span class='va'>y</span>
+</code></pre>
+</div>
+<pre><code>[1] 20</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Hilera de caracteres</span>
+<span class='va'>nombre</span> <span class='op'>&lt;-</span> <span class='st'>'Manuel'</span>
+<span class='va'>nombre</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Manuel&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Vector de hileras de caracteres</span>
+<span class='va'>dias</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'Domingo'</span>, <span class='st'>'Lunes'</span>, <span class='st'>'Martes'</span>, <span class='st'>'Miércoles'</span>, <span class='st'>'Jueves'</span>, <span class='st'>'Viernes'</span>, <span class='st'>'Sábado'</span><span class='op'>)</span>
+<span class='va'>dias</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Domingo&quot;   &quot;Lunes&quot;     &quot;Martes&quot;    &quot;Miércoles&quot; &quot;Jueves&quot;   
+[6] &quot;Viernes&quot;   &quot;Sábado&quot;   </code></pre>
+</div>
+<p>Tanto <code>x</code>, como <code>nombre</code> como <code>dias</code> son variables. Una variable es una etiqueta que se le asigna a un objeto. Una variable debe comenzar con una letra.</p>
+<p>El tipo de una variable puede consultarse con la función <a href="https://rdrr.io/r/base/typeof.html">typeof()</a>. Por ejemplo:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;double&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;double&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>nombre</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;character&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>dias</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;character&quot;</code></pre>
+</div>
+<p>A continuación, se describen con más detalle algunos de los tipos de datos utilizados en el lenguaje R.</p>
+<h2 id="tipos-básicos">Tipos básicos</h2>
+<p>R define <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types">seis tipos de datos básicos</a>. En esta sección, se describen los más utilizados durante este curso.</p>
+<h3 id="números">Números</h3>
+<p>Pueden ser enteros (<code>integer</code>) o decimales (<code>double</code>). Se utilizan en diversos tipos de operaciones, incluyendo las aritméticas (ej. suma, resta, multiplicación, división).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Declaración de variables numéricas</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>5</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fl'>0.5</span>
+
+<span class='co'># Suma</span>
+<span class='va'>x</span> <span class='op'>+</span> <span class='va'>y</span>
+</code></pre>
+</div>
+<pre><code>[1] 5.5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Tipos de datos numéricos</span>
+<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;double&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;double&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span> <span class='op'>+</span> <span class='va'>y</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;double&quot;</code></pre>
+</div>
+<p>Para declarar números enteros puede usarse el sufijo <code>L</code> o la función <a href="https://rdrr.io/r/base/integer.html">as.integer()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Números enteros</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>10L</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='fl'>15</span><span class='op'>)</span>
+
+<span class='co'># Multiplicación</span>
+<span class='va'>x</span> <span class='op'>*</span> <span class='va'>y</span>
+</code></pre>
+</div>
+<pre><code>[1] 150</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Tipos de datos enteros</span>
+<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span> <span class='op'>*</span> <span class='va'>y</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+</div>
+<p>Nótese que al declararse una variable numérica, ya sea que tenga o no punto decimal, R la considera por defecto de tipo <code>double</code>. Para que se considere de tipo <code>integer</code>, debe utilizarse el sufijo <code>L</code> o la función <code>as.integer()</code>.</p>
+<h3 id="caracteres">Caracteres</h3>
+<p>Se utilizan para representar textos. Deben estar encerrados entre comillas simples (<code>''</code>) o dobles (<code>""</code>).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Hileras de caracteres</span>
+<span class='va'>nombre</span> <span class='op'>&lt;-</span> <span class='st'>"María"</span>
+<span class='va'>apellido</span> <span class='op'>&lt;-</span> <span class='st'>"Pérez"</span>
+
+<span class='co'># Concatenación mediante la función paste()</span>
+<span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>nombre</span>, <span class='va'>apellido</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;María Pérez&quot;</code></pre>
+</div>
+<h3 id="lógicos">Lógicos</h3>
+<p>Los objetos lógicos (también llamados <em>booleanos</em>) tienen dos posibles valores: verdadero (<code>TRUE</code>) o falso (<code>FALSE</code>).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Variable lógica</span>
+<span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='op'>&lt;</span> <span class='fl'>2</span>
+<span class='va'>a</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Variable lógica</span>
+<span class='va'>b</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='op'>&gt;</span> <span class='fl'>2</span>
+<span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>[1] FALSE</code></pre>
+</div>
+<p>Las expresiones lógicas pueden combinarse con operadores como:</p>
 <ul>
-<li>Características generales de R.</li>
-<li>El ambiente de desarrollo RStudio.</li>
-<li>Funciones y paquetes.</li>
+<li><code>&amp;</code> (Y, en inglés <em>AND</em>)</li>
+<li><code>|</code> (O, en inglés <em>OR</em>)</li>
+<li><code>!</code> (NO, en inglés <em>NOT</em>)</li>
 </ul>
-<h1 id="trabajo-previo">Trabajo previo</h1>
-<ul>
-<li>Lea los capítulos 2 y 3 de <a href="https://rstudio-education.github.io/hopr/">Grolemund, G., &amp; Wickham, H. (2014). Hands-On Programming with R</a>.</li>
-</ul>
-<h1 id="contenidos">Contenidos</h1>
-<p><a href="01-r-caracteristicas_generales.html">01 R - Características generales</a><br />
-<a href="02-rstudio.html">02 El ambiente de desarrollo RStudio</a><br />
-<a href="03-r-funciones_paquetes.html">03 R - Funciones y paquetes</a><br />
-<a href="04-r-tipos_datos.html">04 R - Tipos de datos</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Operador lógico AND</span>
+<span class='op'>(</span><span class='fl'>1</span> <span class='op'>&lt;</span> <span class='fl'>2</span><span class='op'>)</span> <span class='op'>&amp;</span> <span class='op'>(</span><span class='fl'>3</span> <span class='op'>&lt;</span> <span class='fl'>4</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Operador lógico OR</span>
+<span class='op'>(</span><span class='fl'>2</span> <span class='op'>+</span> <span class='fl'>2</span> <span class='op'>==</span> <span class='fl'>5</span><span class='op'>)</span> <span class='op'>|</span> <span class='op'>(</span><span class='fl'>20</span> <span class='op'>&lt;=</span> <span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Operador lógico NOT</span>
+<span class='op'>!</span><span class='op'>(</span><span class='fl'>2</span> <span class='op'>+</span> <span class='fl'>2</span> <span class='op'>==</span> <span class='fl'>5</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE</code></pre>
+</div>
+<h3 id="vectores">Vectores</h3>
+<p>Un <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects">vector</a> es una estructura unidimensional que combina objetos del mismo tipo.</p>
+<h4 id="definición">Definición</h4>
+<p>Los vectores pueden definirse de varias formas como, por ejemplo, con la función <a href="https://rdrr.io/r/base/c.html">c()</a> (del inglés <em>combine</em>):</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de un vector de números</span>
+<span class='va'>vector_numeros</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>7</span>, <span class='fl'>32</span>, <span class='fl'>45</span>, <span class='fl'>57</span><span class='op'>)</span>
+<span class='va'>vector_numeros</span>
+</code></pre>
+</div>
+<pre><code>[1]  1  7 32 45 57</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de un vector de hileras de caracteres</span>
+<span class='va'>vector_nombres</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Álvaro"</span>, <span class='st'>"Ana"</span>, <span class='st'>"Berta"</span>, <span class='st'>"Bernardo"</span><span class='op'>)</span>
+<span class='va'>vector_nombres</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Álvaro&quot;   &quot;Ana&quot;      &quot;Berta&quot;    &quot;Bernardo&quot;</code></pre>
+</div>
+<p>Los vectores también pueden crearse con el operador <code>:</code>, el cual especifica una secuencia:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de un vector de números con la secuencia de 1 a 10</span>
+<span class='va'>vector_secuencia</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>
+<span class='va'>vector_secuencia</span>
+</code></pre>
+</div>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de un vector de números con la secuencia de -5 a 5</span>
+<span class='va'>vector_secuencia</span> <span class='op'>&lt;-</span> <span class='op'>-</span><span class='fl'>5</span><span class='op'>:</span><span class='fl'>5</span>
+<span class='va'>vector_secuencia</span>
+</code></pre>
+</div>
+<pre><code> [1] -5 -4 -3 -2 -1  0  1  2  3  4  5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de un vector de números con la secuencia de -0.5 a 3.7</span>
+<span class='va'>vector_secuencia</span> <span class='op'>&lt;-</span> <span class='op'>-</span><span class='fl'>0.5</span><span class='op'>:</span><span class='fl'>3.7</span>
+<span class='va'>vector_secuencia</span>
+</code></pre>
+</div>
+<pre><code>[1] -0.5  0.5  1.5  2.5  3.5</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/seq.html">seq()</a> también crea un vector con base en una secuencia y permite especificar argumentos como un valor de incremento y la longitud de la secuencia.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de un vector de números con la secuencia de 1 a 10</span>
+<span class='va'>vector_secuencia</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>10</span><span class='op'>)</span>
+<span class='va'>vector_secuencia</span>
+</code></pre>
+</div>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de un vector de números con la secuencia de 0.5 a 15.3, con incremento de 2</span>
+<span class='va'>vector_secuencia</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0.5</span>, to<span class='op'>=</span><span class='fl'>15.3</span>, by<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='va'>vector_secuencia</span>
+</code></pre>
+</div>
+<pre><code>[1]  0.5  2.5  4.5  6.5  8.5 10.5 12.5 14.5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de un vector de números con la secuencia de 1.5 a 9.4, con longitud de 4</span>
+<span class='va'>vector_secuencia</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>1.5</span>, to<span class='op'>=</span><span class='fl'>9.4</span>, length.out<span class='op'>=</span><span class='fl'>4</span><span class='op'>)</span>
+<span class='va'>vector_secuencia</span>
+</code></pre>
+</div>
+<pre><code>[1] 1.500000 4.133333 6.766667 9.400000</code></pre>
+</div>
+<h4 id="indexación">Indexación</h4>
+<p>Los elementos de un vector se acceden a través de sus <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Indexing">índices</a> (i.e. posiciones). La primera posición corresponde al índice 1, la segunda al índice 2 y así sucesivamente. Los índices se especifican entre paréntesis cuadrados (<code>[]</code>), ya sea para una posición específica o para un rango de posiciones. También es posible especificar los índices que se desea excluir.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Vector de nombres de países</span>
+<span class='va'>paises</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Argentina"</span>, <span class='st'>"Francia"</span>, <span class='st'>"China"</span>, <span class='st'>"Australia"</span>, <span class='st'>"México"</span><span class='op'>)</span>
+<span class='va'>paises</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Argentina&quot; &quot;Francia&quot;   &quot;China&quot;     &quot;Australia&quot; &quot;México&quot;   </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Elemento en el índice 3</span>
+<span class='va'>paises</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;China&quot;</code></pre>
+</div>
+<p>El operador <code>:</code> puede utilizarse para especificar un rango de índices:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Elementos entre los índices 2 y 4 (2, 3 y 4)</span>
+<span class='va'>paises</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Francia&quot;   &quot;China&quot;     &quot;Australia&quot;</code></pre>
+</div>
+<p>Con la función <code>c()</code>, es posible especificar un conjunto de índices específicos:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Elementos entre los índices 1, 4 y 5</span>
+<span class='va'>paises</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>4</span>, <span class='fl'>5</span><span class='op'>)</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Argentina&quot; &quot;Australia&quot; &quot;México&quot;   </code></pre>
+</div>
+<p>Los números negativos pueden usarse para excluir índices:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Exclusión de los índices 3 y 4</span>
+<span class='va'>paises</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>3</span>, <span class='op'>-</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Argentina&quot; &quot;Francia&quot;   &quot;México&quot;   </code></pre>
+</div>
+<p>Los valores lógicos <code>TRUE</code> y <code>FALSE</code> también pueden usarse para incluir y excluir índices de un vector:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Se incluyen los índices 1, 2 y 4; y se excluyen los índices 3 y 5</span>
+<span class='va'>paises</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>, <span class='cn'>TRUE</span>, <span class='cn'>FALSE</span>, <span class='cn'>TRUE</span>, <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Argentina&quot; &quot;Francia&quot;   &quot;Australia&quot;</code></pre>
+</div>
+<h4 id="operaciones">Operaciones</h4>
+<p>En los vectores pueden aplicarse operaciones aritméticas:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>3</span>, <span class='fl'>5</span>, <span class='fl'>7</span><span class='op'>)</span>
+<span class='va'>b</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>4</span>, <span class='fl'>6</span>, <span class='fl'>8</span><span class='op'>)</span>
+
+<span class='co'># Suma de vectores</span>
+<span class='va'>a</span> <span class='op'>+</span> <span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>[1]  3  7 11 15</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Multiplicación de vectores</span>
+<span class='va'>a</span> <span class='op'>*</span> <span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>[1]  2 12 30 56</code></pre>
+</div>
+<p>Y también pueden realizarse operaciones relacionales:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Comparación con el operador &lt;</span>
+<span class='va'>a</span> <span class='op'>&lt;</span> <span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE TRUE TRUE TRUE</code></pre>
+</div>
+<h3 id="matrices">Matrices</h3>
+<p>Una <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects">matriz</a> es una estructura bidimensional de filas y columnas.</p>
+<h4 id="definición-1">Definición</h4>
+<p>Las matrices se definen mediante la función <a href="https://rdrr.io/r/base/matrix.html">matrix()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Definición de una matriz de 3 x 3 con elementos de la secuencia 1:9 distribuidos en las columnas</span>
+<span class='va'>m</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>9</span>, nrow<span class='op'>=</span><span class='fl'>3</span>, ncol<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
+<span class='va'>m</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de una matriz de 3 x 3 con elementos de la secuencia 1:9 distribuidos en las filas</span>
+<span class='va'>m</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>9</span>, nrow<span class='op'>=</span><span class='fl'>3</span>, ncol<span class='op'>=</span><span class='fl'>3</span>, byrow<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>m</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Definición de una matriz de 3 x 2 con nombres para las filas y las columnas</span>
+<span class='va'>datos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>18</span>, <span class='fl'>500</span>, <span class='fl'>25</span>, <span class='fl'>1000</span>, <span class='fl'>30</span>, <span class='fl'>2000</span><span class='op'>)</span>
+<span class='va'>filas</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Ana"</span>, <span class='st'>"Mario"</span>, <span class='st'>"Laura"</span><span class='op'>)</span>
+<span class='va'>columnas</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Edad"</span>, <span class='st'>"Salario"</span><span class='op'>)</span>
+
+<span class='va'>m</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='va'>datos</span>, nrow<span class='op'>=</span><span class='fl'>3</span>, ncol<span class='op'>=</span><span class='fl'>2</span>, byrow<span class='op'>=</span><span class='cn'>TRUE</span>, dimnames<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>filas</span>, <span class='va'>columnas</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>m</span>
+</code></pre>
+</div>
+<pre><code>      Edad Salario
+Ana     18     500
+Mario   25    1000
+Laura   30    2000</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/list.html">list()</a> se utiliza, en este caso, para combinar vectores. En general, se usa para combinar datos de cualquier tipo.</p>
+<h4 id="indexación-1">Indexación</h4>
+<p>La indexación de matrices es similar a la de vectores, pero deben especificarse índices tanto para filas como para columnas.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Elemento en la posición [2,2] (segunda fila, segunda columna)</span>
+<span class='va'>m</span><span class='op'>[</span><span class='fl'>2</span>, <span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Elementos de la primera fila</span>
+<span class='va'>m</span><span class='op'>[</span><span class='fl'>1</span>,<span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>   Edad Salario 
+     18     500 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Elementos de la segunda columna</span>
+<span class='va'>m</span><span class='op'>[</span>, <span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>  Ana Mario Laura 
+  500  1000  2000 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Elementos de las filas 1 y 2</span>
+<span class='va'>m</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, <span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>      Edad Salario
+Ana     18     500
+Mario   25    1000</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Elementos de la fila "Mario"</span>
+<span class='va'>m</span><span class='op'>[</span><span class='st'>"Mario"</span>, <span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>   Edad Salario 
+     25    1000 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Elementos de la columna "Salario"</span>
+<span class='va'>m</span><span class='op'>[</span>, <span class='st'>"Salario"</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>  Ana Mario Laura 
+  500  1000  2000 </code></pre>
+</div>
+<h4 id="operaciones-1">Operaciones</h4>
+<p>De manera similar a los vectores, en las matrices pueden realizarse operaciones aritméticas y relacionales.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span>, nrow<span class='op'>=</span><span class='fl'>2</span>, ncol<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='va'>a</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2]
+[1,]    1    3
+[2,]    2    4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='va'>b</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>5</span><span class='op'>:</span><span class='fl'>8</span>, nrow<span class='op'>=</span><span class='fl'>2</span>, ncol<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2]
+[1,]    5    7
+[2,]    6    8</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Suma de matrices</span>
+<span class='va'>a</span> <span class='op'>+</span> <span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2]
+[1,]    6   10
+[2,]    8   12</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Multiplicación de matrices</span>
+<span class='va'>a</span> <span class='op'>*</span> <span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2]
+[1,]    5   21
+[2,]   12   32</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Comparación de matrices con el operador &gt;</span>
+<span class='va'>a</span> <span class='op'>&gt;</span> <span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>      [,1]  [,2]
+[1,] FALSE FALSE
+[2,] FALSE FALSE</code></pre>
+</div>
+<h2 id="tipos-compuestos">Tipos compuestos</h2>
+<h3 id="factores">Factores</h3>
+<p>Los factores se utilizan para representar datos categóricos. Un factor corresponde a un conjunto de categorías correspondientes a un concepto (ej. [“Sí”, “No”], [“Casado”, “Soltero”], [“Alto”, “Medio”, “Bajo”]).</p>
+<p>Internamente, los factores se representan en R como números enteros con etiquetas asociadas. A pesar de que los factores parecen (y pueden funcionar como) hileras de caracteres, en realidad son números y debe tenerse cuidado de no manejarlos como caracteres.</p>
+<p>Los elementos de un factor se denominan niveles (<em>levels</em>) y, por defecto, se almacenan en orden alfabético.</p>
+<h4 id="definición-2">Definición</h4>
+<p>Un factor se crea con la función <a href="https://rdrr.io/r/base/factor.html">factor()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Factor de valores de sexo</span>
+<span class='va'>sexo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Masculino"</span>, <span class='st'>"Femenino"</span>, <span class='st'>"Femenino"</span>, <span class='st'>"Masculino"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h4 id="operaciones-2">Operaciones</h4>
+<p>R proporciona una gran variedad de funciones para manejar factores. Seguidamente, se ejemplifican algunas de estas.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Etiquetas de los niveles</span>
+<span class='fu'><a href='https://rdrr.io/r/base/levels.html'>levels</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Femenino&quot;  &quot;Masculino&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Cantidad de niveles</span>
+<span class='fu'><a href='https://rdrr.io/r/base/nlevels.html'>nlevels</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 2</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Conteo de elementos de cada uno de los niveles del factor</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>sexo</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>sexo
+ Femenino Masculino 
+        2         2 </code></pre>
+</div>
+<h3 id="data-frames">Data Frames</h3>
+<p>Los <em>data frames</em> son estructuras bidimensionales compuestas por varios vectores, de manera similar a una matriz. Por lo general, las filas de la matriz corresponden a <em>observaciones</em> (o <em>cases</em>) y las columnas a <em>variables</em>. La definición de un data frame puede incluir nombres para cada observación y para cada variable. Los data frames implementan un conjunto de funciones similares a las de una hoja electrónica o la tabla de una base de datos relacional. Son fundamentales para el manejo de datos en R.</p>
+<h4 id="definición-3">Definición</h4>
+<p>La función <a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a> crea un data frame a partir de vectores que serán las columnas del data frame.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Vector de nombres de países</span>
+<span class='va'>paises</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"PAN"</span>, <span class='st'>"CRI"</span>, <span class='st'>"NIC"</span>, <span class='st'>"SLV"</span>, <span class='st'>"HND"</span>, <span class='st'>"GTM"</span>, <span class='st'>"BLZ"</span>, <span class='st'>"DOM"</span><span class='op'>)</span>
+
+<span class='co'># Vector de cantidades de habitantes de cada país (en millones)</span>
+<span class='va'>poblaciones</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4.1</span>, <span class='fl'>5.0</span>, <span class='fl'>6.2</span>, <span class='fl'>6.4</span>, <span class='fl'>9.2</span>, <span class='fl'>16.9</span>, <span class='fl'>0.3</span>, <span class='fl'>10.6</span><span class='op'>)</span>
+
+<span class='co'># Creación de un data frame a partir de los dos vectores</span>
+<span class='va'>poblaciones_paises</span> <span class='op'>&lt;-</span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
+    pais <span class='op'>=</span> <span class='va'>paises</span>, 
+    poblacion <span class='op'>=</span> <span class='va'>poblaciones</span>
+  <span class='op'>)</span>
+
+<span class='co'># Impresión del data frame</span>
+<span class='va'>poblaciones_paises</span>
+</code></pre>
+</div>
+<pre><code>  pais poblacion
+1  PAN       4.1
+2  CRI       5.0
+3  NIC       6.2
+4  SLV       6.4
+5  HND       9.2
+6  GTM      16.9
+7  BLZ       0.3
+8  DOM      10.6</code></pre>
+</div>
+<h4 id="indexación-2">Indexación</h4>
+<p>Los datos de un data frame pueden accederse principalmente de dos formas. La primera es mediante la misma sintaxis <code>[fila, columna]</code> que se utiliza en las matrices.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Fila 1</span>
+<span class='va'>poblaciones_paises</span><span class='op'>[</span><span class='fl'>1</span>, <span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>  pais poblacion
+1  PAN       4.1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Filas 1, 5 y 7</span>
+<span class='va'>poblaciones_paises</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>5</span>, <span class='fl'>7</span><span class='op'>)</span>, <span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>  pais poblacion
+1  PAN       4.1
+5  HND       9.2
+7  BLZ       0.3</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Columna 2</span>
+<span class='va'>poblaciones_paises</span><span class='op'>[</span>, <span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1]  4.1  5.0  6.2  6.4  9.2 16.9  0.3 10.6</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Fila 1, columna 2</span>
+<span class='va'>poblaciones_paises</span><span class='op'>[</span><span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] 4.1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Filas 1:4, columna 2</span>
+<span class='va'>poblaciones_paises</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span>, <span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] 4.1 5.0 6.2 6.4</code></pre>
+</div>
+<p>Además, mediante el operador <code>$</code>, es posible acceder a las columnas (i.e. variables) del data frame.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Columna de nombres de países</span>
+<span class='va'>poblaciones_paises</span><span class='op'>$</span><span class='va'>pais</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;PAN&quot; &quot;CRI&quot; &quot;NIC&quot; &quot;SLV&quot; &quot;HND&quot; &quot;GTM&quot; &quot;BLZ&quot; &quot;DOM&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Modificación de los valores de toda una columna</span>
+<span class='va'>poblaciones_paises</span><span class='op'>$</span><span class='va'>poblacion</span> <span class='op'>=</span> <span class='va'>poblaciones_paises</span><span class='op'>$</span><span class='va'>poblacion</span><span class='op'>*</span><span class='fl'>2</span>
+<span class='va'>poblaciones_paises</span>
+</code></pre>
+</div>
+<pre><code>  pais poblacion
+1  PAN       8.2
+2  CRI      10.0
+3  NIC      12.4
+4  SLV      12.8
+5  HND      18.4
+6  GTM      33.8
+7  BLZ       0.6
+8  DOM      21.2</code></pre>
+</div>
+<h4 id="operaciones-3">Operaciones</h4>
+<p>R proporciona una gran variedad de funciones para manejar data frames. Las siguientes son algunas de las más utilizadas.</p>
+<p>La función <a href="https://rdrr.io/r/utils/read.table.html">read.table()</a> lee los datos contenidos en un archivo de texto y los retorna en un data frame. <a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a> es una función derivada, con valores por defecto orientados a los archivos de valores separados por comas (CSV, <em>Comma Separated Values</em>). Como argumento principal, <code>read.csv()</code> recibe la ruta del archivo CSV, el cual puede encontrarse en un disco local, en la Web o en otra ubicación.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Lectura de archivo CSV ubicado en la Web</span>
+<span class='va'>covid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv"</span><span class='op'>)</span>
+
+<span class='va'>covid</span>
+</code></pre>
+</div>
+<pre><code>  pais fallecidos recuperados activos positivos
+1  PAN       6198      351949    3845    361992
+2  CRI       3125      199779   32370    235274
+3  GTM       7345      194075   16725    218145
+4  HND       4981       77020  121358    203359
+5  SLV       2089       64208    1864     68161
+6  BLZ        318       12164     114     12596
+7  NIC        181        5212      57      5450</code></pre>
+</div>
+<p><strong> Ejercicio 01:<br />
+a. Descargue el archivo del ejemplo anterior (<a href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv" class="uri">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/cepredenac/covid/04_22_21_CSV_GENERAL_CENTROAMERICA.csv</a>) en su computadora y cárguelo en otro data frame mediante <code>read.csv()</code>. </strong></p>
+<p>La función <a href="https://rdrr.io/r/utils/str.html">str()</a> despliega la estructura de un objeto R.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Estructura del data frame</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>poblaciones_paises</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&#39;data.frame&#39;:   8 obs. of  2 variables:
+ $ pais     : chr  &quot;PAN&quot; &quot;CRI&quot; &quot;NIC&quot; &quot;SLV&quot; ...
+ $ poblacion: num  8.2 10 12.4 12.8 18.4 33.8 0.6 21.2</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/summary.html">summary()</a> proporciona un resumen de los contenidos de un data frame:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Resumen de los contenidos del data frame</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>poblaciones_paises</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     pais             poblacion    
+ Length:8           Min.   : 0.60  
+ Class :character   1st Qu.: 9.55  
+ Mode  :character   Median :12.60  
+                    Mean   :14.68  
+                    3rd Qu.:19.10  
+                    Max.   :33.80  </code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/utils/View.html">View()</a> invoca un visor de datos que permite visualizar un objeto R en un formato de tabla en una hoja de cálculo. Ejecute en su computadora la siguiente línea de código para apreciar el funcionamiento de <code>View()</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Vista de los casos de COVID-19</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='va'>covid</span>, <span class='st'>"Casos de COVID-19 en Centramérica"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="otros">Otros</h2>
+<h3 id="fechas">Fechas</h3>
+<p>Las fecha se manejan en R mediante un tipo especial que permite realizar operaciones como diferencias, agrupamientos y otras. Internamente, las fechas en R se almacenan como un número que representa la cantidad de días transcurridos desde el 1 de enero de 1970 (1970-01-01).</p>
+<h4 id="operaciones-4">Operaciones</h4>
+<p>La función <a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a> retorna la fecha actual.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Fecha actual</span>
+<span class='va'>fecha_actual</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>fecha_actual</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;2021-04-28&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Tipo de datos</span>
+<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>fecha_actual</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;double&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Clase</span>
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>fecha_actual</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Date&quot;</code></pre>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a> convierte datos entre los tipos fecha y carácter, de acuerdo con un formato.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Conversión de fecha en formato año-mes-día</span>
+<span class='va'>fecha_caracter_01</span> <span class='op'>&lt;-</span> <span class='st'>"2020-01-01"</span>
+<span class='va'>fecha_01</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span><span class='op'>(</span><span class='va'>fecha_caracter_01</span>, format<span class='op'>=</span><span class='st'>"%Y-%m-%d"</span><span class='op'>)</span>
+<span class='va'>fecha_01</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;2020-01-01&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Conversión de fecha en formato día/mes/año</span>
+<span class='va'>fecha_caracter_02</span> <span class='op'>&lt;-</span> <span class='st'>"31/01/2020"</span>
+<span class='va'>fecha_02</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span><span class='op'>(</span><span class='va'>fecha_caracter_02</span>, format<span class='op'>=</span><span class='st'>"%d/%m/%Y"</span><span class='op'>)</span>
+<span class='va'>fecha_02</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;2020-01-31&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Diferencia entre fechas</span>
+<span class='va'>fecha_02</span> <span class='op'>-</span> <span class='va'>fecha_01</span>
+</code></pre>
+</div>
+<pre><code>Time difference of 30 days</code></pre>
+</div>
+<p>Hay una lista de formatos de fechas en <a href="https://www.r-bloggers.com/date-formats-in-r/">Date Formats in R - R-bloggers</a>.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

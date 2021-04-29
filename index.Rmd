@@ -6,7 +6,7 @@ author:
   affiliation: Universidad de Costa Rica
   affiliation_url: https://www.ucr.ac.cr/
 description: |
-  Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lección 06.
+  Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones 06 y 07.
 site: distill::distill_website
 ---
 
@@ -35,3 +35,4 @@ En esta lección, se estudiarán los conceptos básicos del lenguaje de programa
 [01 R - Características generales](01-r-caracteristicas_generales.html)  
 [02 El ambiente de desarrollo RStudio](02-rstudio.html)  
 [03 R - Funciones y paquetes](03-r-funciones_paquetes.html)  
+[04 R - Tipos de datos](04-r-tipos_datos.html)  
