@@ -1,0 +1,71 @@
+---
+title: "R - Conceptos básicos"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Condicionales
+Las sentencias condicionales evalúan una expresión lógica (i.e. condición) y ejecutan, o no, un bloque de intrucciones dependiendo de si la expresión es verdadera (```TRUE```) o falsa (```FALSE```). Permiten que los programas "tomen decisiones" y varíen su curso de acción.
+
+## La sentencia ```if```
+La sentencia ```if``` evalúa una condición y ejecuta un bloque de instrucciones si es verdadera. El bloque se delimita con los caracteres de "llaves": ```{}```. 
+
+```{r eval=FALSE}
+if (condicion) {
+  # bloque de instrucciones a ejecutar si la condicion es verdadera
+}
+```
+
+Por ejemplo:
+
+```{r}
+edad <- 25
+
+if (edad >= 18) {
+  print("Adulto")
+}
+```
+
+Ya sea que se ejecute o no el bloque del ```if```, el programa continúa con las instrucciones que siguen al bloque, si las hay.
+
+## La sentencia ```else```
+Una sentencia ```if``` puede ir seguida de una sentencia ```else```, la cual define un bloque que se ejecuta si la condición es falsa.
+Por ejemplo:
+
+```{r}
+edad <- 15
+
+if (edad >= 18) {
+  print("Adulto")
+} else {
+  print("Menor")
+}
+```
+
+## La sentencia ```else if```
+Una sentencia ```if``` puede ir seguida de una o varias sentencias ```else if```, las cuales evalúan condiciones adicionales.
+
+```{r}
+edad <- 70
+
+if (edad < 18) {
+  print("Menor")
+} else if (edad < 65) {
+  print("Adulto")
+} else {
+  print("Adulto mayor")
+}
+```
+
+Las sentencias ```else if``` deben escribirse antes de la sentencia ```else```, la cual es siempre la última, si es que está presente. Tanto las sentencias ```else if``` como la sentencia ```else``` son opcionales.
+
+**
+Ejercicio 01:  
+a. Defina una función con nombre ```interpretacion_imc()``` que reciba como argumento un número correspondiente al índice de masa corporal (IMC) de una persona.  Debe retornar una hilera de caracteres correspondiente a la interpretación del IMC ("Bajo peso", "Normal", "Sobrepeso", "Obesidad"), de acuerdo con la tabla disponible en [Índice de mapas corporal - Wikipedia](https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal#Interpretaci%C3%B3n).
+**
