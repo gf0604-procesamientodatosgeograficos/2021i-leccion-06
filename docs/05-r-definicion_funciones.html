@@ -2450,20 +2450,89 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#el-ambiente-de-desarrollo-rstudio">El ambiente de desarrollo RStudio</a></li>
+<li><a href="#definición-de-funciones">Definición de funciones</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="el-ambiente-de-desarrollo-rstudio">El ambiente de desarrollo RStudio</h1>
-<p><a href="https://www.rstudio.com/">RStudio</a> es el IDE más popular para el lenguaje R. Está disponible en una versión de escritorio (RStudio Desktop) y en una versión para servidor (RStudio Server). Esta última permite la conexión de varios usuarios a través de un navegador web. RStudio se ofrece también como un servicio en la nube, a través de <a href="https://www.rstudio.com/products/cloud/">RStudio Cloud</a>.</p>
-<figure>
-<img src="img/rstudio.png" />
-<figcaption>
-Interfaz de RStudio.
-</figcaption>
-</figure>
-<p>Además de edición de código fuente en R (y otros lenguajes), RStudio contiene capacidades para depurar código y visualizar datos en formatos tabulares, gráficos y de mapas.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="definición-de-funciones">Definición de funciones</h1>
+<p>Además de todas las funciones disponibles en la distribución base de R y en sus diferentes paquetes, R permite que los programadores definan sus propias funciones.</p>
+<p>Toda función tiene tres partes esenciales:</p>
+<ul>
+<li>Un nombre.</li>
+<li>Un conjunto de argumentos.</li>
+<li>Un conjunto de líneas de código, también llamado <em>el cuerpo</em> de la función.</li>
+</ul>
+<p>Para programar una función, debe definirse cada una de esas partes por medio de la palabra función <a href="https://rdrr.io/r/base/function.html">function()</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mi_funcion</span> <span class='op'>&lt;-</span> 
+  <span class='kw'>function</span><span class='op'>(</span><span class='va'>argumento_1</span>, <span class='va'>argumento_2</span>, <span class='va'>argumento_n</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='co'># Cuerpo de la función</span>
+  <span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>Por ejemplo, la siguiente función calcula la nota final de un curso con base en los promedios de exámenes, proyectos y tareas.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nota_final</span> <span class='op'>&lt;-</span> 
+  <span class='kw'>function</span><span class='op'>(</span><span class='va'>promedio_examenes</span>, <span class='va'>promedio_proyectos</span>, <span class='va'>promedio_tareas</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>examenes</span> <span class='op'>&lt;-</span> <span class='va'>promedio_examenes</span> <span class='op'>*</span> <span class='fl'>0.5</span>
+    <span class='va'>proyectos</span> <span class='op'>&lt;-</span> <span class='va'>promedio_proyectos</span> <span class='op'>*</span> <span class='fl'>0.4</span>
+    <span class='va'>tareas</span> <span class='op'>&lt;-</span> <span class='va'>promedio_tareas</span> <span class='op'>*</span> <span class='fl'>0.1</span>
+    
+    <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>examenes</span> <span class='op'>+</span> <span class='va'>proyectos</span> <span class='op'>+</span> <span class='va'>tareas</span><span class='op'>)</span>
+  <span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>La función <a href="https://rdrr.io/r/base/function.html">return()</a> es la que define el valor de retorno de la función. Si no se incluye, la función retorna la última expresión evaluada.</p>
+<p>Ahora que está definida, la función <code>nota_final()</code> puede ser invocada, con diferentes argumentos:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Si ni se incluyen los nombres de los argumentos, la función asume que se ingresan en el mismo orden en el que fueron definidos</span>
+<span class='fu'>nota_final</span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>50</span>, <span class='fl'>0</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 70</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># El uso de los nombres de argumentos permite modificar su orden</span>
+<span class='fu'>nota_final</span><span class='op'>(</span>promedio_examenes <span class='op'>=</span>  <span class='fl'>100</span>, promedio_tareas <span class='op'>=</span>  <span class='fl'>0</span>, promedio_proyectos <span class='op'>=</span> <span class='fl'>50</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 70</code></pre>
+</div>
+<p>Si se desea darle al usuario la opción de omitir algunos argumentos, se les puede asignar un valor por defecto.</p>
+<p>Seguidamente, la función <code>nota_final()</code> se redefine asignando valores por defecto a algunos de los argumentos:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>nota_final</span> <span class='op'>&lt;-</span> 
+  <span class='kw'>function</span><span class='op'>(</span><span class='va'>promedio_examenes</span>, <span class='va'>promedio_proyectos</span><span class='op'>=</span><span class='fl'>0</span>, <span class='va'>promedio_tareas</span><span class='op'>=</span><span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>examenes</span> <span class='op'>&lt;-</span> <span class='va'>promedio_examenes</span> <span class='op'>*</span> <span class='fl'>0.5</span>
+    <span class='va'>proyectos</span> <span class='op'>&lt;-</span> <span class='va'>promedio_proyectos</span> <span class='op'>*</span> <span class='fl'>0.4</span>
+    <span class='va'>tareas</span> <span class='op'>&lt;-</span> <span class='va'>promedio_tareas</span> <span class='op'>*</span> <span class='fl'>0.1</span>
+    
+    <span class='co'># Al no llamarse a la función return(), se retorna la última expresión:</span>
+    <span class='va'>examenes</span> <span class='op'>+</span> <span class='va'>proyectos</span> <span class='op'>+</span> <span class='va'>tareas</span>
+  <span class='op'>}</span>
+
+<span class='co'># Se utiliza el valor por defecto (0) para el argumento promedio_tareas</span>
+<span class='fu'>nota_final</span><span class='op'>(</span>promedio_examenes <span class='op'>=</span> <span class='fl'>100</span>, promedio_proyectos <span class='op'>=</span> <span class='fl'>50</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 70</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">
+<span class='co'># Se llama la función usando la posición del primer argumento y el nombre del segundo</span>
+<span class='fu'>nota_final</span><span class='op'>(</span><span class='fl'>100</span>, promedio_proyectos <span class='op'>=</span> <span class='fl'>50</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 70</code></pre>
+</div>
+<p><strong> Ejercicio 01:<br />
+a. Defina una función con nombre <code>imc()</code> para calcular el <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal">índice de masa corporal (IMC)</a> de una persona con base en su peso (en kilogramos) y su estatura (en metros). </strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
