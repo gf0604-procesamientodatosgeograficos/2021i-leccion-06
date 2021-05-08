@@ -1,12 +1,12 @@
 ---
-title: "GF0604 Procesamiento de datos geográficos 2021-I. Lecciones de la 06 a la 08"
+title: "GF0604 Procesamiento de datos geográficos 2021-I. Lecciones de la 06 a la 09"
 author: 
 - name: Manuel Vargas
   url: https://github.com/mfvargas
   affiliation: Universidad de Costa Rica
   affiliation_url: https://www.ucr.ac.cr/
 description: |
-  Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones de la 06 a la 08.
+  Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lecciones de la 06 a la 09.
 site: distill::distill_website
 ---
 
@@ -27,6 +27,10 @@ En esta lección, se estudiarán los conceptos básicos del lenguaje de programa
 - Características generales de R.
 - El ambiente de desarrollo RStudio.
 - Funciones y paquetes.
+- Tipos de datos.
+- Definición de funciones.
+- Condicionales.
+- Ciclos.
 
 # Trabajo previo
 - Lea los capítulos del 1 al 12 de [Grolemund, G., & Wickham, H. (2014). Hands-On Programming with R](https://rstudio-education.github.io/hopr/).
@@ -37,4 +41,5 @@ En esta lección, se estudiarán los conceptos básicos del lenguaje de programa
 [03 R - Funciones y paquetes](03-r-funciones_paquetes.html)  
 [04 R - Tipos de datos](04-r-tipos_datos.html)  
 [05 R - Definición de funciones](05-r-definicion_funciones.html)  
-[06 R - Condicionales](06-r-condicionales.html)  
+[06 R - Condicionales](06-r-condicionales.html)
+[07 R - Ciclos](07-r-ciclos.html)  
