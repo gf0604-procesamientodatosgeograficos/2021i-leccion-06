@@ -41,5 +41,5 @@ En esta lección, se estudiarán los conceptos básicos del lenguaje de programa
 [03 R - Funciones y paquetes](03-r-funciones_paquetes.html)  
 [04 R - Tipos de datos](04-r-tipos_datos.html)  
 [05 R - Definición de funciones](05-r-definicion_funciones.html)  
-[06 R - Condicionales](06-r-condicionales.html)
+[06 R - Condicionales](06-r-condicionales.html)  
 [07 R - Ciclos](07-r-ciclos.html)  
