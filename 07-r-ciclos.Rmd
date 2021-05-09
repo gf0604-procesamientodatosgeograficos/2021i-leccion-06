@@ -11,3 +11,26 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Ciclos
+Los ciclos permiten ejecutar tareas de manera repetitiva en un programa. Algunos ciclos se ejecutan una cantidad definida de veces, mientras que otros lo hacen mientras se cumple una condición lógica. Pueden usarse en combinación con cláusulas que terminan anticipadamente el ciclo o que omiten algunas de sus iteraciones.
+
+[Los ciclos en R](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#Looping) se implementan mediante las sentencias ```for```, ```while``` y ```repeat```, en combinación con las cláusulas ```exit``` y ```next```.
+
+R provee varias funciones que implementan bloques de manera implícita, tales como [apply()](https://rdrr.io/r/base/apply.html), [tapply()](https://rdrr.io/r/base/tapply.html) y [lapply()](https://rdrr.io/r/base/lapply.html). Adicionalmente, hay muchas operaciones (ej. las aritméticas) que están "vectorizadas", por lo que no es necesario utilizarlas en ciclos. El uso de código vectorizado es muy recomendado en R, por ser muy eficiente.
+
+## La sentencia ```for```
+La sentencia [for](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#for) repite las instrucciones contenidas en un bloque para cada uno de los elementos de un vector o lista. En cada iteración, el valor del elemento que está siendo procesado se almacena en una variable.
+
+```{r eval=FALSE}
+for (variable in vector) {
+  # bloque de instrucciones
+}
+```
+
+Por ejemplo, el siguiente fragmento de código utiliza un ciclo de tipo ```for``` para recorrer un vector de nombres e imprimir un saludo para cada uno.
+
+```{r}
+for (nombre in c("Andrés", "Beatriz", "Carlos", "Marta", "Pedro", "Sara")) {
+  cat("Hola", nombre, "\n")
+}
+```
+

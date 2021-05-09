@@ -13,8 +13,10 @@ knitr::opts_chunk$set(echo = TRUE)
 # Condicionales
 Las sentencias condicionales evalúan una expresión lógica (i.e. condición) y ejecutan, o no, un bloque de intrucciones dependiendo de si la expresión es verdadera (```TRUE```) o falsa (```FALSE```). Permiten que los programas "tomen decisiones" y varíen su curso de acción.
 
+[Los condicionales en R](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if) se implementa mediante la sentencia ```if``` y sus cláusulas ```else``` y ```else if```.
+
 ## La sentencia ```if```
-La sentencia ```if``` evalúa una condición y ejecuta un bloque de instrucciones si es verdadera. El bloque se delimita con los caracteres de "llaves": ```{}```. 
+La sentencia [if](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if) evalúa una condición y ejecuta un bloque de instrucciones, si es verdadera. El bloque se delimita con los caracteres de "llaves": ```{}```. 
 
 ```{r eval=FALSE}
 if (condicion) {
@@ -34,8 +36,8 @@ if (edad >= 18) {
 
 Ya sea que se ejecute o no el bloque del ```if```, el programa continúa con las instrucciones que siguen al bloque, si las hay.
 
-## La sentencia ```else```
-Una sentencia ```if``` puede ir seguida de una sentencia ```else```, la cual define un bloque que se ejecuta si la condición es falsa.
+## La claúsula ```else```
+Una sentencia ```if``` puede ir seguida de una cláusula ```else```, la cual define un bloque que se ejecuta si la condición es falsa.
 Por ejemplo:
 
 ```{r}
@@ -48,8 +50,8 @@ if (edad >= 18) {
 }
 ```
 
-## La sentencia ```else if```
-Una sentencia ```if``` puede ir seguida de una o varias sentencias ```else if```, las cuales evalúan condiciones adicionales.
+## La cláusula ```else if```
+Una sentencia ```if``` también puede ir seguida de una o varias cláusulas ```else if```, las cuales evalúan condiciones adicionales.
 
 ```{r}
 edad <- 70
@@ -63,7 +65,7 @@ if (edad < 18) {
 }
 ```
 
-Las sentencias ```else if``` deben escribirse antes de la sentencia ```else```, la cual es siempre la última, si es que está presente. Tanto las sentencias ```else if``` como la sentencia ```else``` son opcionales.
+Las cláusulas ```else if``` deben escribirse antes de la cláusula ```else```, la cual es siempre la última, si es que está presente. Tanto las cláusulas ```else if``` como la cláusula ```else``` son opcionales.
 
 **
 Ejercicio 01:  

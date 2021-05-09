@@ -2453,16 +2453,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#condicionales">Condicionales</a>
 <ul>
 <li><a href="#la-sentencia-if">La sentencia <code>if</code></a></li>
-<li><a href="#la-sentencia-else">La sentencia <code>else</code></a></li>
-<li><a href="#la-sentencia-else-if">La sentencia <code>else if</code></a></li>
+<li><a href="#la-claúsula-else">La claúsula <code>else</code></a></li>
+<li><a href="#la-cláusula-else-if">La cláusula <code>else if</code></a></li>
 </ul></li>
 </ul>
 </nav>
 </div>
 <h1 id="condicionales">Condicionales</h1>
 <p>Las sentencias condicionales evalúan una expresión lógica (i.e. condición) y ejecutan, o no, un bloque de intrucciones dependiendo de si la expresión es verdadera (<code>TRUE</code>) o falsa (<code>FALSE</code>). Permiten que los programas “tomen decisiones” y varíen su curso de acción.</p>
+<p><a href="https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if">Los condicionales en R</a> se implementa mediante la sentencia <code>if</code> y sus cláusulas <code>else</code> y <code>else if</code>.</p>
 <h2 id="la-sentencia-if">La sentencia <code>if</code></h2>
-<p>La sentencia <code>if</code> evalúa una condición y ejecuta un bloque de instrucciones si es verdadera. El bloque se delimita con los caracteres de “llaves”: <code>{}</code>.</p>
+<p>La sentencia <a href="https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if">if</a> evalúa una condición y ejecuta un bloque de instrucciones, si es verdadera. El bloque se delimita con los caracteres de “llaves”: <code>{}</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'>if</span> <span class='op'>(</span><span class='va'>condicion</span><span class='op'>)</span> <span class='op'>{</span>
@@ -2484,8 +2485,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre><code>[1] &quot;Adulto&quot;</code></pre>
 </div>
 <p>Ya sea que se ejecute o no el bloque del <code>if</code>, el programa continúa con las instrucciones que siguen al bloque, si las hay.</p>
-<h2 id="la-sentencia-else">La sentencia <code>else</code></h2>
-<p>Una sentencia <code>if</code> puede ir seguida de una sentencia <code>else</code>, la cual define un bloque que se ejecuta si la condición es falsa. Por ejemplo:</p>
+<h2 id="la-claúsula-else">La claúsula <code>else</code></h2>
+<p>Una sentencia <code>if</code> puede ir seguida de una cláusula <code>else</code>, la cual define un bloque que se ejecuta si la condición es falsa. Por ejemplo:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>edad</span> <span class='op'>&lt;-</span> <span class='fl'>15</span>
@@ -2499,8 +2500,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <pre><code>[1] &quot;Menor&quot;</code></pre>
 </div>
-<h2 id="la-sentencia-else-if">La sentencia <code>else if</code></h2>
-<p>Una sentencia <code>if</code> puede ir seguida de una o varias sentencias <code>else if</code>, las cuales evalúan condiciones adicionales.</p>
+<h2 id="la-cláusula-else-if">La cláusula <code>else if</code></h2>
+<p>Una sentencia <code>if</code> también puede ir seguida de una o varias cláusulas <code>else if</code>, las cuales evalúan condiciones adicionales.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>edad</span> <span class='op'>&lt;-</span> <span class='fl'>70</span>
@@ -2516,7 +2517,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <pre><code>[1] &quot;Adulto mayor&quot;</code></pre>
 </div>
-<p>Las sentencias <code>else if</code> deben escribirse antes de la sentencia <code>else</code>, la cual es siempre la última, si es que está presente. Tanto las sentencias <code>else if</code> como la sentencia <code>else</code> son opcionales.</p>
+<p>Las cláusulas <code>else if</code> deben escribirse antes de la cláusula <code>else</code>, la cual es siempre la última, si es que está presente. Tanto las cláusulas <code>else if</code> como la cláusula <code>else</code> son opcionales.</p>
 <p><strong> Ejercicio 01:<br />
 a. Defina una función con nombre <code>interpretacion_imc()</code> que reciba como argumento un número correspondiente al índice de masa corporal (IMC) de una persona. Debe retornar una hilera de caracteres correspondiente a la interpretación del IMC (“Bajo peso”, “Normal”, “Sobrepeso”, “Obesidad”), de acuerdo con la tabla disponible en <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal#Interpretaci%C3%B3n">Índice de mapas corporal - Wikipedia</a>. </strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
