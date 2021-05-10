@@ -16,7 +16,7 @@ Las sentencias condicionales evalúan una expresión lógica (i.e. condición) y
 [Los condicionales en R](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if) se implementa mediante la sentencia ```if``` y sus cláusulas ```else``` y ```else if```.
 
 ## La sentencia ```if```
-La sentencia [if](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if) evalúa una condición y ejecuta un bloque de instrucciones, si es verdadera. El bloque se delimita con los caracteres de "llaves": ```{}```. 
+La sentencia [if](https://cran.r-project.org/doc/manuals/r-devel/R-lang.html#if) evalúa una condición (i.e. una expresión lógica) y ejecuta un bloque de instrucciones, si es verdadera. El bloque se delimita con los caracteres de "llaves": ```{}```. 
 
 ```{r eval=FALSE}
 if (condicion) {
